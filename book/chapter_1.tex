@@ -1,0 +1,583 @@
+\chapter{一元函数极限}
+\section{预备}
+\subsection{几点注释}
+\subsubsection{关于反函数}
+
+\begin{definition}[反函数]
+    给定集合$X$、$Y$，已知函数$f:X\rightarrow Y$,若函数$g$的定义域为$f(X)$,且
+    \begin{equation*}
+        \forall x\in X,有g(f(x))=x
+    \end{equation*}
+    即复合函数
+    \begin{equation*}
+        g\circ f:X\rightarrow f(X) \rightarrow X
+    \end{equation*}是$X$上的恒等变换,则称$g$为$f$的反函数,且记$g=f^{-1}$
+\end{definition}
+
+\begin{note}
+    \begin{itemize}
+        \item $f$也是$f^{-1}$的反函数,即$(f^{-1})^{-1}=f$
+        \item $f(f^{-1}(y))=y \quad f^{-1}(f(x))=x$\label{反函数性质}
+    \end{itemize}
+\end{note}
+
+\begin{definition}[单射]
+    已知函数$f:X\rightarrow Y$,若$\forall x_1,x_2 \in X$,
+    \begin{equation*}
+        x_1\ne x_2\Longrightarrow f(x_1)\ne f(x_2)
+    \end{equation*}
+    则称$f$为单射
+\end{definition}
+
+\begin{definition}[满射]
+    已知函数$f:X\rightarrow Y$,若$\forall y \in Y$,
+    \begin{equation*}
+        \exists x \in X , f(x)=y
+    \end{equation*}
+    则称$f$为满射
+\end{definition}
+
+\begin{definition}[双射]
+    已知函数$f:X\rightarrow Y$,若$f$既是单射，又是满射，则称$f$为双射。此时有
+    \begin{equation*}
+        \forall x_1 \ne x_2\in X \Longleftrightarrow f(x_1) \ne f(x_2)
+    \end{equation*}
+\end{definition}
+
+\begin{theorem}[反函数存在的充分必要条件]
+    函数$f$的反函数存在$\Longleftrightarrow$ $f$是双射
+\end{theorem}
+
+\begin{note}
+    \begin{itemize}
+        \item 若$f:X \rightarrow Y$和$g:Y\rightarrow Z$都是双射，则它们的复合函数$g\circ f$也是双射，且有
+              \begin{equation*}
+                  (g\circ f)^{-1}=f^{-1}\circ g^{-1}
+              \end{equation*}
+
+        \item 严格单调的满射必有反函数，且反函数与原函数保持相同的单调性
+    \end{itemize}
+\end{note}
+
+\newpage
+
+\begin{example}
+    设$f:\mathbb{R} \rightarrow \mathbb{R}$严格单调增，$f^{-1}$是其反函数，$x_1$是$f(x)+x=a$的根，$x_2$是$f^{-1}(x)+x=a$的根,试求$x_1+x_2$的值.
+\end{example}
+
+\begin{solution}
+
+    将$x_1$,$x_2$分别代入,得到
+    \begin{equation}
+        f(x_1)+x_1=a \label{x1方程}
+    \end{equation}
+    \begin{equation}
+        f^{-1}(x_2)+x_2=a \label{x2方程}
+    \end{equation}
+
+    又由\ref{反函数性质}处的笔记可得,
+    \begin{equation}
+        x_1=f^{-1}(f(x_1)) \label{x1性质}
+    \end{equation}
+
+    将\ref{x1性质}代入\ref{x1方程}中,得到
+    \begin{equation}
+        f^{-1}(f(x_1))+f(x_1)=a \label{x1结果}
+    \end{equation}
+
+    对比\ref{x1结果}与\ref{x2方程},
+
+    由于$f(x)$单调递增,则$f^{-1}(x)$也单调递增，进一步，$f^{-1}(x)+x$单调递增,最多只有一根,
+
+    故$x_2=f(x_1)$
+
+    即$x_1+x_2=x_1+f(x_1)=a$
+\end{solution}
+
+\subsubsection{关于函数奇偶性}
+
+\begin{definition}[函数奇偶性]
+    函数$f$定义在区间$(-l,l)$上($l$为正有限数或$+\infty$),
+
+    若$\forall x\in (-l,l)$，有$f(x)=f(-x)$，则称函数$f$为偶函数。
+
+    若$\forall x\in (-l,l)$，有$f(x)+f(-x)=0$，则称函数$f$为奇函数。
+\end{definition}
+
+\vspace{4pt}
+
+\begin{example}
+    设$f$是$(-l,l)$上的奇函数,并且有反函数$f^{-1}$,证明:$f^{-1}(x)$也是奇函数
+\end{example}
+
+\begin{proof}
+
+    因为$f$是$(-l,l)$上的奇函数，所以$\forall x\in (-l,l)$，有
+    \begin{equation}
+        f(x)+f(-x)=0  \label{奇函数性质}
+    \end{equation}
+
+    $\forall y \in R_f=\{y|y=f(x) ,x\in (-l,l) \}$,有
+    \begin{equation}
+        f^{-1}(y)+f^{-1}(-y)=f^{-1}(f(x))+f^{-1}(-f(x))  \label{y替换为f(x)}
+    \end{equation}
+
+    将\ref{奇函数性质}代入\ref{y替换为f(x)}，并由\ref{反函数性质}处笔记得到
+    \begin{equation*}
+        f^{-1}(y)+f^{-1}(-y)==f^{-1}(f(x))+f^{-1}(f(-x))=x+(-x)=0
+    \end{equation*}
+
+    即$f^{-1}(y)$在$R_f$上为奇函数
+\end{proof}
+
+\vspace{4pt}
+
+\begin{example}
+    若$f^{-1}$为$f$的反函数，$y=f^{-1}(-x)$是$y=f(-x)$的反函数,证明:$f$是奇函数
+\end{example}
+
+\begin{proof}
+
+    由$f^{-1}$为$f$的反函数可得，
+    \begin{equation}
+        f(f^{-1}(y))=y \label{正逆函数}
+    \end{equation}
+
+    由$y=f^{-1}(-x)$是$y=f(-x)$的反函数可得,
+    \begin{equation}
+        f^{-1}(-f(-x))=x    \label{题目条件}
+    \end{equation}
+
+    结合\ref{正逆函数}、\ref{题目条件}，
+    \begin{equation*}
+        f(x)+f(-x)=f(f^{-1}(-f(-x)))+f(-x)=-f(-x)+f(-x)=0
+    \end{equation*}
+
+    即$f$是奇函数
+\end{proof}
+
+\vspace{8pt}
+
+\begin{example}
+    证明:任一对称区间$(-l,l)$上的任一函数$f(x)$,总可以表示成一个奇函数$G(x)$与一个偶函数$H(x)$的和，而且此种表示方法是唯一的.
+\end{example}
+
+\begin{proof}
+
+    假设已经找到一个奇函数$G(x)$与一个偶函数$H(x)$，使得
+    \begin{equation}
+        f(x)=G(x)+H(x) \label{式1}
+    \end{equation}
+
+    则由奇偶函数的性质可得，
+
+    \begin{equation}
+        f(-x)=G(-x)+H(-x)=-G(x)+H(x)    \label{式2}
+    \end{equation}
+
+    联立\ref{式1}、\ref{式2}，
+
+    可解得
+
+    \begin{equation}
+        G(x) = \frac{f(x)-f(-x)}{2} \label{奇函数决定式}
+    \end{equation}
+    \begin{equation}
+        H(x) = \frac{f(x)+f(-x)}{2} \label{偶函数决定式}
+    \end{equation}
+
+    可由$f(x)$唯一确定\ref{奇函数决定式}、\ref{偶函数决定式}，显然证毕
+\end{proof}
+
+\subsubsection{关于周期函数}
+\begin{definition}[周期函数]
+    若存在实数$T\ne 0$,使得$\forall x \in \mathbb{R} $,有
+    \begin{equation*}
+        f(x+T)=f(x)
+    \end{equation*}
+
+    则称函数$f$为以$T$为周期的周期函数
+\end{definition}
+
+\begin{note}
+    \begin{itemize}
+        \item 若$T$为函数$f$的周期，则其整数倍$kT$也为函数$f$的周期
+        \item 若$T_1,T_2$均为函数$f$的周期，则$T_1\pm T_2$也为函数$f$的周期
+        \item 并不是所有周期函数都有最小正周期,如常值函数和狄利克雷 (Dirichlet)函数
+    \end{itemize}
+\end{note}
+
+\vspace{8pt}
+
+\begin{example}
+    证明:设$f(x)$是$\mathbb{R}$上的有界实值函数，且有
+    \begin{equation}
+        f(x+h)=\frac{f(x+2h)+f(x)}{2} \quad (\forall x\in \mathbb{R})   \label{周期中间式}
+    \end{equation}
+
+    其中$h$为某一正数，则$h$必是函数$f$的周期
+\end{example}
+
+\begin{proof}
+
+    整理\ref{周期中间式}得,
+    \begin{equation}
+        f(x+2h)-f(x+h)=f(x+h)-f(x)\quad(\forall x\in \mathbb{R})    \label{递推式1}
+    \end{equation}
+
+    令$F(x)=f(x+h)-f(x)$，则\ref{递推式1}化为
+    \begin{equation}
+        F(x+h)=F(x)
+    \end{equation}
+
+    则可得
+
+    $f(x+nh)=[f(x+nh)-f(x+(n-1)h)]+[f(x+(n-1)h)-f(x+(n-2)h)]+\cdots+[f(x+h)-f(x)]+f(x)$
+    $$=F(x+(n-1)h)+F(x+(n-2)h)+\cdots+F(x)+f(x)$$
+    \begin{equation*}
+        =\sum_{k=0}^{n-1}F(x+kh)+f(x)=nF(x)+f(x)
+    \end{equation*}
+
+    若$F(x)\ne 0$，则当$n\to +\infty$时，有$nF(x)\to \infty$
+
+    则$f(x+nh)=nF(x)+f(x)\to \infty$，这与函数$f$有界矛盾，故$F(x)=0$
+
+    即$f(x+h)=f(x)$，$h$为函数$f$的周期
+\end{proof}
+
+\vspace{4pt}
+
+\begin{note}
+    \begin{itemize}
+        \item 若函数$f$在数轴上是有界函数,则\ref{周期中间式}或\ref{递推式1}是$f$以$h$为周期的充分必要条件
+        \item “有界”条件必不可少,如$f(x)=x$
+    \end{itemize}
+\end{note}
+
+\vspace{6pt}
+
+\begin{example}
+    设$T$是$f$的正周期，$y=f^{-1}(x)$是$f$在$(0,T)$部分的反函数.试求$f$在$(-T,0)$部分的反函数.
+\end{example}
+
+\begin{solution}   \label{周期证明}
+
+    $y=f^{-1}(x)$是$f$在$(0,T)$部分的反函数,则
+    \begin{equation}
+        f^{-1}(f(x))=x,\forall x \in (0,T) \label{周期性质}
+    \end{equation}
+
+    当$x \in (-T,0)$时,有$x+T\in (0,T)$,代入\ref{周期性质},得
+    \begin{equation}
+        f^{-1}(f(x+T))=x+T  \label{周期替换}
+    \end{equation}
+
+    又$f(x)$以$T$为周期,有
+    \begin{equation}
+        f(x+T)=f(x)
+    \end{equation}
+
+    代入\ref{周期替换},
+    \begin{equation*}
+        f^{-1}(f(x))=x+T
+    \end{equation*}
+
+    即
+    \begin{equation*}
+        f^{-1}(f(x))-T=x,\forall x \in (-T,0)
+    \end{equation*}
+
+    易知，$g(y)=f^{-1}(y)-T$为$f$在$(-T,0)$部分的反函数
+
+\end{solution}
+
+\begin{theorem}[反函数周期偏移]
+    设函数$f$有正周期$T$,值域为$G=\{y|y=f(x),x \in \mathbb{R}\}$,$f^{-1}(y)$为其在$[0,T)$上的反函数,
+
+    若$m\in [kT,(k+1)T)$,$k$为某整数,则在$[m,m+T)$上,
+
+    $f$也有反函数,且该反函数由
+    \begin{equation}
+        x = \begin{cases}
+            f^{-1}(y)+kT     & y\in \{y|y=f(x),x\in [m,(k+1)T)\}\subset G   \\
+            f^{-1}(y)+(k+1)T & y\in \{y|y=f(x),x\in [(k+1)T,m+T)\}\subset G
+        \end{cases}
+    \end{equation}
+\end{theorem}
+
+\begin{proof}
+
+    参见\ref{周期证明}例题1.6
+\end{proof}
+
+\subsection{几个常用的不等式}
+
+\begin{theorem}[均值不等式]
+    调和平均$\le$几何平均$\le$算术平均$\le$平方平均
+
+    即
+
+    $\forall x_i\ge 0(i=1,2,\cdots,n)$,恒有
+
+    \begin{equation}    \label{均值不等式}
+        \frac{n}{\frac{1}{x_1}+\cdots+\frac{1}{x_n}}\le \sqrt[n]{x_1\cdots x_n}\le  \frac{x_1+\cdots+x_n}{n} \le \sqrt{\frac{x_1^2+\cdots+x_n^2}{n}}
+    \end{equation}
+
+    当且仅当$x_1=\cdots=x_n$时取等号
+\end{theorem}
+
+\begin{proof}
+
+    [几何平均$\le$算术平均]
+
+    \vspace{4pt}
+
+    显然
+    \begin{equation}
+        \sqrt{x_1x_2}=\sqrt{(\frac{x_1+x_2}{2})^2-(\frac{x_1-x_2}{2})^2}\le \frac{x_1+x_2}{2}   \label{2}
+    \end{equation}
+
+    当且仅当$x_1=x_2$时取等号
+
+    这说明$n=2$时,不等式成立
+    \vspace{6pt}
+
+    $n=4$时,由\ref{2}得,
+    \begin{equation}
+        \sqrt[4]{x_1x_2x_3x_4}=\sqrt{\sqrt{x_1x_2}\sqrt{x_3x_4}}\le \frac{\sqrt{x_1x_2}+\sqrt{x_3x_4}}{2}\le \frac{\frac{x_1+x_2}{2}+\frac{x_3+x_4}{2}}{2}=\frac{x_1+x_2+x_3+x_4}{4}    \label{4递推}
+    \end{equation}
+
+    当且仅当$x_1=x_2=x_3=x_4$时取等号
+
+    这说明$n=4$时,不等式成立
+    \vspace{8pt}
+
+    假设$n=2^k$时,不等式成立,即
+    \begin{equation}
+        \sqrt[2^k]{x_1\cdots x_{2^k}}\le \frac{x_1+\cdots+x_{2^k}}{2^k}
+    \end{equation}
+
+    当且仅当$x_1=x_2=\cdots = x_{2^k}$时取等号
+
+    \vspace{8pt}
+
+    则$n=2^{k+1}$时,
+
+    \begin{equation*}
+        \sqrt[2^{k+1}]{x_1\cdots x_{2^k}\cdots x_{2^{k+1}}}=\sqrt[2^k]{\sqrt{x_1 x_2} \sqrt{x_3 x_4} \cdots \sqrt{x_{2^{k+1}-1} x_{2^{k+1}}}}\le \frac{\sqrt{x_1 x_2}+\sqrt{x_3 x_4}+\cdots+\sqrt{x_{2^{k+1}-1} x_{2^{k+1}}}}{2^k}
+    \end{equation*}
+    \begin{equation}
+        \le \frac{ \frac{x_1+x_2}{2} + \frac{x_3+x_4}{2} + \cdots + \frac{x_{2^{k+1}-1}+x_{2^{k+1}}}{2}}{2^k} = \frac{x_1+x_2+\cdots + x_{2^{k+1}-1}+x_{2^{k+1}}}{2^{k+1}}=\frac{x_1+x_2+\cdots + x_{2^{k+1}-1}+x_{2^{k+1}}}{n}
+    \end{equation}
+
+    当且仅当$x_1=x_2=\cdots = x_{2^{k+1}}$时取等号
+
+    \vspace{8pt}
+
+    即,对$n=2^k(k=1,2,\cdots)$,不等式均成立
+
+    \vspace{8pt}
+    设$A=\frac{x_1+\cdots+x_n}{n}$,
+
+    设对$n+1$，不等式成立,则
+    \begin{equation}
+        A=\frac{nA+A}{n+1}=\frac{x_1+\cdots+x_n+A}{n+1}\ge \sqrt[n+1]{x_1\cdots x_n A}
+    \end{equation}
+
+    整理得,
+
+    \begin{equation}
+        A^{n+1}\ge x_1\cdots x_n A \implies A\ge \sqrt[n]{x_1 \cdots x_n}
+    \end{equation}
+
+    即对$n$，不等式成立
+
+    由数学归纳法，对$n=1,2,\cdots$,不等式均成立
+
+    \vspace{8pt}
+
+    [调和平均$\le$几何平均]
+
+    \vspace{4pt}
+    在“几何平均$\le$算术平均”不等式中,令$x_i=\frac{1}{a_i}(i=1,2\cdots)$，有
+
+    \begin{equation}
+        \sqrt[n]{\frac{1}{a_1}\cdots \frac{1}{a_n}} \le \frac{\frac{1}{a_1}+\cdots+\frac{1}{a_n}}{n}
+    \end{equation}
+
+    整理得,
+
+    \begin{equation}
+        \frac{n}{\frac{1}{a_1}+\cdots+\frac{1}{a_n}}\le \sqrt[n]{a_1\cdots a_n}
+    \end{equation}
+
+    得证
+
+    \vspace{8pt}
+    [算术平均$\le$平方平均]
+
+    由柯西不等式得，
+    \begin{equation*}
+        (x_1+\cdots+x_n)^2=(x_1\cdot1 +\cdots +x_n\cdot1)^2\le (x_1^2+\cdots+x_n^2)(1+\cdots+1)=n(x_1^2+\cdots+x_n^2)
+    \end{equation*}
+    \begin{equation}
+        (\frac{x_1+\cdots+x_n}{n})^2 \le \frac{x_1^2+\cdots +x_n^2}{n}
+    \end{equation}
+
+    两边开方即得证
+\end{proof}
+
+\vspace{8pt}
+
+\begin{theorem}[对数不等式]
+    当$x>-1$时,有
+    \begin{equation}
+        \frac{x}{1+x} \le \ln(1+x) \le x
+    \end{equation}
+
+    当且仅当$x=0$时取等号
+\end{theorem}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../image/对数不等式.pdf}
+    \caption{对数不等式图解}
+\end{figure}
+
+\begin{solution}
+
+    求导证明即可
+\end{solution}
+
+\begin{note}
+    \begin{itemize}
+        \item 令$x=\frac{1}{n}$,则可以得到
+              \begin{equation}
+                  \frac{1}{1+n} \le \ln(1+\frac{1}{n}) \le \frac{1}{n} \label{对数不等式推论}
+              \end{equation}
+    \end{itemize}
+\end{note}
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat
+    {
+        \begin{minipage}[t]{0.49\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{../image/对数不等式推论}
+        \end{minipage}
+    }
+    \subfloat
+    {
+        \begin{minipage}[t]{0.49\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{../image/sinx与x}
+        \end{minipage}
+    }
+    \vspace{6pt}
+    \caption{不等式\ref{对数不等式推论}(左)、不等式\ref{1.37}(右)图解}
+\end{figure}
+
+\begin{example}
+    证明:\begin{equation}
+        \frac{2}{\pi}x \le \sin x \le x \quad x\in (0,\frac{\pi}{2}) \label{1.37}
+    \end{equation}
+\end{example}
+
+\begin{proof}
+    考虑$f(x)=\frac{\sin x}{x}$,求导证明即可
+\end{proof}
+
+\subsection{华里士(Wallis)公式}
+\begin{theorem}[Wallis公式]
+    \begin{equation}
+        I_n=\int_{0}^{\frac{\pi}{2}} \sin^n xdx=\int_{0}^{\frac{\pi}{2}} \cos^n xdx=
+        \begin{cases}
+        \frac{(n-1)!!}{n!!} \cdot \frac{\pi}{2}& n=2k\\ 
+        \frac{(n-1)!!}{n!!}& n=2k+1
+        \end{cases}
+    \end{equation}
+
+    \begin{equation}
+        I_{m,n}=\int_{0}^{\frac{\pi}{2}}\sin^m x \cos^n x=
+    \begin{cases}
+        \frac{(m-1)!!(n-1)!!}{(m+n)!!}\cdot \frac{\pi}{2} & m=2i,n=2j\\ 
+        \frac{(m-1)!!(n-1)!!}{(m+n)!!}& others
+    \end{cases}
+    \end{equation}
+\end{theorem}
+
+\begin{proof}
+    
+    [$I_n$前部分]
+    
+    由分部积分法,
+    \begin{equation*}
+        I_n=\int_{0}^{\frac{\pi}{2}} \sin^n xdx
+        =-\int_{0}^{\frac{\pi}{2}} \sin^{n-1}x d \cos x
+        =-\sin^{n-1} x \cos x|_{0}^{\frac{\pi}{2}}+\int_{0}^{\frac{\pi}{2}} \cos x d \sin^{n-1} x
+    \end{equation*}
+
+    \begin{equation*}
+        =\int_{0}^{\frac{\pi}{2}} \cos x\cdot (n-1)\sin^{n-2} x \cdot \cos x dx
+        =(n-1)\int_{0}^{\frac{\pi}{2}} \cos^2 x \sin^{n-2} x dx
+    \end{equation*}
+
+    \begin{equation*}
+        =(n-1)\int_{0}^{\frac{\pi}{2}} (1-\sin^2 x) \sin^{n-2} x dx
+        =(n-1)\int_{0}^{\frac{\pi}{2}}\sin^{n-2} xdx - (n-1)\int_{0}^{\frac{\pi}{2}}\sin^n xdx
+    \end{equation*}
+
+    \begin{equation*}
+        = (n-1)I_{n-2}-(n-1)I_n
+    \end{equation*}
+
+    整理得迭代式:
+
+    \begin{equation}
+        I_n = \frac{n-1}{n} I_{n-2} \label{点火迭代式}
+    \end{equation}
+    
+    又
+    \begin{equation*}
+        I_0 = \int_{0}^{\frac{\pi}{2}} dx = \frac{\pi}{2}
+    \end{equation*}
+    \begin{equation*}
+        I_1 = \int_{0}^{\frac{\pi}{2}} \sin x dx = -\cos x|_{0}^{\frac{\pi}{2}} = 1 
+    \end{equation*}
+
+    依据\ref{点火迭代式}迭代得,\
+    \begin{equation}
+        I_n = \frac{n-1}{n} I_{n-2}
+        = \frac{n-1}{n} \frac{n-3}{n-2} I_{n-4}=\cdots 
+        \begin{cases}
+            = \frac{n-1}{n} \frac{n-3}{n-2} \cdots \frac{1}{2}I_0 = \frac{(n-1)!!}{n!!} \cdot \frac{\pi}{2}& n=2k\\
+            = \frac{n-1}{n} \frac{n-3}{n-2} \cdots \frac{2}{3}I_1 = \frac{(n-1)!!}{n!!} & n=2k+1
+        \end{cases}
+    \end{equation}
+    
+    得证
+
+    [$I_n$后部分]
+
+    \begin{equation*}
+        \int_{0}^{\frac{\pi}{2}} \cos^n xdx
+        \xlongequal{t=\frac{\pi}{2}-x}
+        \int_{\frac{\pi}{2}}^{0}\cos^n (\frac{\pi}{2}-t)d(\frac{\pi}{2}-t) = - \int_{\frac{\pi}{2}}^{0}\sin^n tdt
+        = \int_{0}^{\frac{\pi}{2}} \sin^n tdt =I_n 
+    \end{equation*}
+
+    得证
+
+    [$I_{m,n}$]
+
+    \begin{equation*}
+        I_{m,n} = 
+    \end{equation*}
+\end{proof}
+
+
+
+
+
+

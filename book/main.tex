@@ -1,0 +1,45 @@
+\documentclass[lang=cn,10pt,newtx,color=green]{elegantbook}
+
+% 封面信息
+\title{《数学分析中的典型问题与方法》详解}
+\subtitle{解析与扩充}
+\author{李辉}
+\date{2022年12月30日}
+\bioinfo{学校}{南昌大学}
+\extrainfo{由ElegantBook-4.4模板编写而成}
+
+\setcounter{tocdepth}{3}
+\logo{logo-blue.png}
+\cover{cover.jpg}
+
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+
+% 修改标题页的橙色带
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+\usepackage{cprotect}
+
+% 参考文献
+\addbibresource[location=local]{reference.bib} 
+
+% 双图
+\usepackage{subfig}
+\usepackage{graphicx}
+
+% 长横箭头上写字
+\usepackage{extarrows}
+
+\begin{document}
+
+\maketitle
+\frontmatter
+
+\tableofcontents
+
+\mainmatter
+
+\include{chapter_1.tex}
+
+\end{document}
