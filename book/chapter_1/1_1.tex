@@ -499,7 +499,7 @@
     \end{equation}
 
     \begin{equation}
-        I_{m,n}=\int_{0}^{\frac{\pi}{2}}\sin^m x \cos^n x=
+        I_{m,n}=\int_{0}^{\frac{\pi}{2}}\sin^m x \cos^n xdx=
     \begin{cases}
         \frac{(m-1)!!(n-1)!!}{(m+n)!!}\cdot \frac{\pi}{2} & m=2i,n=2j\\ 
         \frac{(m-1)!!(n-1)!!}{(m+n)!!}& others
@@ -572,12 +572,73 @@
     [$I_{m,n}$]
 
     \begin{equation*}
-        I_{m,n} = 
+        I_{m,n} = \int_{0}^{\frac{\pi}{2}}\sin^m x \cos^n xdx
+        = \int_{0}^{\frac{\pi}{2}}\sin^m x \cos^{n-1} xd \sin x
     \end{equation*}
+    \begin{equation*}
+        = \sin^{m+1} x \cos^{n-1} x |_{0}^{\frac{\pi}{2}}-
+        \int_{0}^{\frac{\pi}{2}}\sin x d (\sin^m x \cos^{n-1}x) 
+    \end{equation*}
+    \begin{equation*}
+        =-\int_{0}^{\frac{\pi}{2}}\sin x  (m\sin^{m-1}x \cos x \cos^{n-1}x - sin^m x (n-1)\cos^{n-2} x \sin x) dx
+    \end{equation*}
+    \begin{equation*}
+        =-m\int_{0}^{\frac{\pi}{2}}\sin^m x \cos^{n}xdx +(n-1) \int_{0}^{\frac{\pi}{2}} sin^{m+2} x \cos^{n-2} x dx
+        = -m I_{m,n}+(n-1)I_{m+2,n-2}
+    \end{equation*}
+
+    整理得,
+
+    \begin{equation}
+        I_{m,n} = \frac{n-1}{m+1} I_{m+2,n-2}   \label{迭代式2}
+    \end{equation}
+
+    \vspace{8pt}
+    $\star \quad n=2k$时,依据迭代式\ref{迭代式2},有
+    \begin{equation*}
+        I_{m,n}=\frac{n-1}{m+1} I_{m+2,n-2}
+        = \frac{n-1}{m+1} \frac{n-3}{m+3} I_{m+4,n-4}
+        = \frac{n-1}{m+1} \frac{n-3}{m+3}\cdots \frac{1}{m+n-1} I_{m+n}
+        = \frac{(n-1)!!(m-1)!!}{(m+n-1)!!} I_{m+n}
+    \end{equation*}
+    \begin{equation}
+        =
+        \begin{cases}
+            \frac{(n-1)!!(m-1)!!}{(m+n-1)!!} \frac{(m+n-1)!!}{(m+n)!!} \cdot \frac{\pi}{2}=\frac{(n-1)!!(m-1)!!}{(m+n)!!} \cdot \frac{\pi}{2}& m=2k\\
+            \frac{(n-1)!!(m-1)!!}{(m+n-1)!!} \frac{(m+n-1)!!}{(m+n)!!} = \frac{(n-1)!!(m-1)!!}{(m+n)!!} & m=2k+1 \label{1.38}
+        \end{cases}
+    \end{equation}
+
+    \vspace{8pt}
+    $\star \quad n=2k+1$时,依据迭代式\ref{迭代式2},有
+    \begin{equation}
+        I_{m,n}=\frac{n-1}{m+1} I_{m+2,n-2}
+        = \frac{n-1}{m+1} \frac{n-3}{m+3} I_{m+4,n-4}
+        = \frac{n-1}{m+1} \frac{n-3}{m+3}\cdots \frac{2}{m+n-2} I_{m+n-1,1}
+        = \frac{(n-1)!!(m-1)!!}{(m+n-2)!!} I_{m+n-1,1}  \label{1.39}
+    \end{equation}
+
+    又有
+    \begin{equation}
+        I_{m+n-1,1} = \int_{0}^{\frac{\pi}{2}} \sin^{m+n-1} x \cos xdx
+        = \int_{0}^{\frac{\pi}{2}} \sin^{m+n-1} x d\sin x
+        = \frac{1}{m+n} \sin^{m+n} x|_{0}^{\frac{\pi}{2}}
+        = \frac{1}{m+n} \label{1.40}
+    \end{equation}
+
+    将\ref{1.40}代入\ref{1.39}得,无论$m$的奇偶性,均有
+    \begin{equation}
+        I_{m,n} = \frac{(n-1)!!(m-1)!!}{(m+n)!!}    \label{1.41}
+    \end{equation}
+
+    结合\ref{1.38}、\ref{1.41}，得证
 \end{proof}
 
+\begin{figure*}[htbp]
+    \centering
+    \includegraphics*[width=\textwidth]{../image/练习}
+\end{figure*}
 
-
-
-
-
+\begin{exercise}
+    
+\end{exercise}
