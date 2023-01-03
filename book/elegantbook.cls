@@ -1109,7 +1109,7 @@
 %% Example with counter
 \newcounter{exam}[section]
 \setcounter{exam}{0}
-\renewcommand{\theexam}{\thechapter.\arabic{exam}}
+\renewcommand{\theexam}{\thesection.\arabic{exam}}
 \newenvironment{example}[1][]{
   \refstepcounter{exam}
   \par\noindent\textbf{\color{main}{\examplename} \theexam #1 }\rmfamily}{
@@ -1118,7 +1118,7 @@
 %% Exercise with counter
 \newcounter{exer}[section]
 \setcounter{exer}{0}
-\renewcommand{\theexer}{\thechapter.\arabic{exer}}
+\renewcommand{\theexer}{\thesection.\arabic{exer}}
 \newenvironment{exercise}[1][]{
   \refstepcounter{exer}
   \par\noindent\makebox[-3pt][r]{
@@ -1129,7 +1129,7 @@
 %% Problem with counter
 \newcounter{prob}[section]
 \setcounter{prob}{0}
-\renewcommand{\theprob}{\thechapter.\arabic{prob}}
+\renewcommand{\theprob}{\thesection.\arabic{prob}}
 \newenvironment{problem}[1][]{
   \refstepcounter{prob}
   \par\noindent\textbf{\color{main}{\problemname} \theprob #1 }\rmfamily}{
@@ -1142,16 +1142,13 @@
 
 \newenvironment{proof}{
   \par\noindent\textbf{\color{second}\proofname\;}
-  \color{black!90}\cfs}{
-  % \hfill$\Box$\quad
-  \par}
-
-\newenvironment{solution}{\par\noindent\textbf{\color{main}\solutionname} \citshape}{\par}
-\newenvironment{remark}{\noindent\textbf{\color{second}\remarkname}}{\par}
-\newenvironment{assumption}{\par\noindent\textbf{\color{third}\assumptionname} \citshape}{\par}
-\newenvironment{conclusion}{\par\noindent\textbf{\color{third}\conclusionname} \citshape}{\par}
-\newenvironment{property}{\par\noindent\textbf{\color{third}\propertyname} \citshape}{\par}
-\newenvironment{custom}[1]{\par\noindent\textbf{\color{third} #1} \citshape}{\par}
+  \color{black!90}\cfs }{\par}
+\newenvironment{solution}{\par\noindent\textbf{\color{main}\solutionname } \citshape}{\par}
+\newenvironment{remark}{\noindent\textbf{\color{second}\remarkname} }{\par}
+\newenvironment{assumption}{\par\noindent\textbf{\color{third}\assumptionname } \citshape}{\par}
+\newenvironment{conclusion}{\par\noindent\textbf{\color{third}\conclusionname } \citshape}{\par}
+\newenvironment{property}{\par\noindent\textbf{\color{third}\propertyname } \citshape}{\par}
+\newenvironment{custom}[1]{\par\noindent\textbf{\color{third} #1 } \citshape}{\par}
 
 \RequirePackage{multicol}
 \tcbset{
