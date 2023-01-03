@@ -1,4 +1,4 @@
-\documentclass[lang=cn,10pt,newtx,color=green]{elegantbook}
+\documentclass[lang=cn,10pt,newtx,color=green,thmcnt=section]{elegantbook}
 
 % 封面信息
 \title{《数学分析中的典型问题与方法》详解}
@@ -31,6 +31,19 @@
 % 长横箭头上写字
 \usepackage{extarrows}
 
+% 公式按节编号
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+
+% 公式编号
+\usepackage{cleveref}
+\crefname{equation}{式}{式}
+\crefname{exam}{例题}{例题}
+\crefname{exer}{练习}{练习}
+
+% 特殊符号
+\usepackage{pifont}
+
 \begin{document}
 
 \maketitle
@@ -40,6 +53,7 @@
 
 \mainmatter
 
-\include{chapter_1.tex}
+\include{chapter_1/1_1.tex}
+\include{chapter_1/1_2.tex}
 
 \end{document}

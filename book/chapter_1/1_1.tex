@@ -80,12 +80,12 @@
         x_1=f^{-1}(f(x_1)) \label{x1性质}
     \end{equation}
 
-    将\ref{x1性质}代入\ref{x1方程}中,得到
+    将\cref{x1性质}代入\cref{x1方程}中,得到
     \begin{equation}
         f^{-1}(f(x_1))+f(x_1)=a \label{x1结果}
     \end{equation}
 
-    对比\ref{x1结果}与\ref{x2方程},
+    对比\cref{x1结果}与\cref{x2方程},
 
     由于$f(x)$单调递增,则$f^{-1}(x)$也单调递增，进一步，$f^{-1}(x)+x$单调递增,最多只有一根,
 
@@ -122,7 +122,7 @@
         f^{-1}(y)+f^{-1}(-y)=f^{-1}(f(x))+f^{-1}(-f(x))  \label{y替换为f(x)}
     \end{equation}
 
-    将\ref{奇函数性质}代入\ref{y替换为f(x)}，并由\ref{反函数性质}处笔记得到
+    将\cref{奇函数性质}代入\cref{y替换为f(x)}，并由\ref{反函数性质}处笔记得到
     \begin{equation*}
         f^{-1}(y)+f^{-1}(-y)==f^{-1}(f(x))+f^{-1}(f(-x))=x+(-x)=0
     \end{equation*}
@@ -148,7 +148,7 @@
         f^{-1}(-f(-x))=x    \label{题目条件}
     \end{equation}
 
-    结合\ref{正逆函数}、\ref{题目条件}，
+    结合\cref{正逆函数}、\cref{题目条件}，
     \begin{equation*}
         f(x)+f(-x)=f(f^{-1}(-f(-x)))+f(-x)=-f(-x)+f(-x)=0
     \end{equation*}
@@ -175,7 +175,7 @@
         f(-x)=G(-x)+H(-x)=-G(x)+H(x)    \label{式2}
     \end{equation}
 
-    联立\ref{式1}、\ref{式2}，
+    联立\cref{式1}、\cref{式2}，
 
     可解得
 
@@ -186,7 +186,7 @@
         H(x) = \frac{f(x)+f(-x)}{2} \label{偶函数决定式}
     \end{equation}
 
-    可由$f(x)$唯一确定\ref{奇函数决定式}、\ref{偶函数决定式}，显然证毕
+    可由$f(x)$唯一确定\cref{奇函数决定式}、\cref{偶函数决定式}，显然证毕
 \end{proof}
 
 \subsubsection{关于周期函数}
@@ -220,12 +220,12 @@
 
 \begin{proof}
 
-    整理\ref{周期中间式}得,
+    整理\cref{周期中间式}得,
     \begin{equation}
         f(x+2h)-f(x+h)=f(x+h)-f(x)\quad(\forall x\in \mathbb{R})    \label{递推式1}
     \end{equation}
 
-    令$F(x)=f(x+h)-f(x)$，则\ref{递推式1}化为
+    令$F(x)=f(x+h)-f(x)$，则\cref{递推式1}化为
     \begin{equation}
         F(x+h)=F(x)
     \end{equation}
@@ -249,14 +249,14 @@
 
 \begin{note}
     \begin{itemize}
-        \item 若函数$f$在数轴上是有界函数,则\ref{周期中间式}或\ref{递推式1}是$f$以$h$为周期的充分必要条件
+        \item 若函数$f$在数轴上是有界函数,则\cref{周期中间式}或\cref{递推式1}是$f$以$h$为周期的充分必要条件
         \item “有界”条件必不可少,如$f(x)=x$
     \end{itemize}
 \end{note}
 
 \vspace{6pt}
 
-\begin{example}
+\begin{example}\label{exer:周期例题}
     设$T$是$f$的正周期，$y=f^{-1}(x)$是$f$在$(0,T)$部分的反函数.试求$f$在$(-T,0)$部分的反函数.
 \end{example}
 
@@ -267,7 +267,7 @@
         f^{-1}(f(x))=x,\forall x \in (0,T) \label{周期性质}
     \end{equation}
 
-    当$x \in (-T,0)$时,有$x+T\in (0,T)$,代入\ref{周期性质},得
+    当$x \in (-T,0)$时,有$x+T\in (0,T)$,代入\cref{周期性质},得
     \begin{equation}
         f^{-1}(f(x+T))=x+T  \label{周期替换}
     \end{equation}
@@ -277,7 +277,7 @@
         f(x+T)=f(x)
     \end{equation}
 
-    代入\ref{周期替换},
+    代入\cref{周期替换},
     \begin{equation*}
         f^{-1}(f(x))=x+T
     \end{equation*}
@@ -307,7 +307,7 @@
 
 \begin{proof}
 
-    参见\ref{周期证明}例题1.6
+    参见\cref{exer:周期例题}
 \end{proof}
 
 \subsection{几个常用的不等式}
@@ -342,7 +342,7 @@
     这说明$n=2$时,不等式成立
     \vspace{6pt}
 
-    $n=4$时,由\ref{2}得,
+    $n=4$时,由\cref{2}得,
     \begin{equation}
         \sqrt[4]{x_1x_2x_3x_4}=\sqrt{\sqrt{x_1x_2}\sqrt{x_3x_4}}\le \frac{\sqrt{x_1x_2}+\sqrt{x_3x_4}}{2}\le \frac{\frac{x_1+x_2}{2}+\frac{x_3+x_4}{2}}{2}=\frac{x_1+x_2+x_3+x_4}{4}    \label{4递推}
     \end{equation}
@@ -445,7 +445,6 @@
 \end{figure}
 
 \begin{solution}
-
     求导证明即可
 \end{solution}
 
@@ -546,7 +545,7 @@
         I_1 = \int_{0}^{\frac{\pi}{2}} \sin x dx = -\cos x|_{0}^{\frac{\pi}{2}} = 1 
     \end{equation*}
 
-    依据\ref{点火迭代式}迭代得,\
+    依据\cref{点火迭代式}迭代得,\
     \begin{equation}
         I_n = \frac{n-1}{n} I_{n-2}
         = \frac{n-1}{n} \frac{n-3}{n-2} I_{n-4}=\cdots 
@@ -594,7 +593,7 @@
     \end{equation}
 
     \vspace{8pt}
-    $\star \quad n=2k$时,依据迭代式\ref{迭代式2},有
+    $\star \quad n=2k$时,依据迭代\cref{迭代式2},有
     \begin{equation*}
         I_{m,n}=\frac{n-1}{m+1} I_{m+2,n-2}
         = \frac{n-1}{m+1} \frac{n-3}{m+3} I_{m+4,n-4}
@@ -610,7 +609,7 @@
     \end{equation}
 
     \vspace{8pt}
-    $\star \quad n=2k+1$时,依据迭代式\ref{迭代式2},有
+    $\star \quad n=2k+1$时,依据迭代\cref{迭代式2},有
     \begin{equation}
         I_{m,n}=\frac{n-1}{m+1} I_{m+2,n-2}
         = \frac{n-1}{m+1} \frac{n-3}{m+3} I_{m+4,n-4}
@@ -626,12 +625,12 @@
         = \frac{1}{m+n} \label{1.40}
     \end{equation}
 
-    将\ref{1.40}代入\ref{1.39}得,无论$m$的奇偶性,均有
+    将\cref{1.40}代入\cref{1.39}得,无论$m$的奇偶性,均有
     \begin{equation}
         I_{m,n} = \frac{(n-1)!!(m-1)!!}{(m+n)!!}    \label{1.41}
     \end{equation}
 
-    结合\ref{1.38}、\ref{1.41}，得证
+    结合\cref{1.38}、\cref{1.41}，得证
 \end{proof}
 
 \begin{figure*}[htbp]
@@ -640,5 +639,410 @@
 \end{figure*}
 
 \begin{exercise}
-    
+    求复合函数的表达式
+
+    (1)已知$f(x)=\frac{x}{\sqrt{1+x^2}}$，设$f_n(x)=f\{f[\cdots (f(x)) \cdots]\}(n$个$f)$,求$f_n(x)$
+
+    (2)设$f(x)=\frac{x}{x-1}$，试证明$f[f(f(x))]=f(x)$，并求$f(\frac{1}{f(x)})\quad (x\ne 0,x\ne 1)$
 \end{exercise}
+
+\begin{solution}
+
+    (1)
+    \begin{equation*}
+        f_2(x)=\frac{\frac{x}{\sqrt{1+x^2}}}{\sqrt{1+(\frac{x}{\sqrt{1+x^2}})^2}} = \frac{x}{\sqrt{1 + 2 x^2}}
+    \end{equation*}
+    \begin{equation*}
+        f_3(x)=\frac{\frac{x}{\sqrt{1+2x^2}}}{\sqrt{1+(\frac{x}{\sqrt{1+2x^2}})^2}} = \frac{x}{\sqrt{1 + 3 x^2}}
+    \end{equation*}
+
+    设$n=k$时，有$f_k(x)=\frac{x}{\sqrt{1 + k x^2}}$
+
+    则$n=k+1$时,\begin{equation*}
+        f_{k+1}(x)=\frac{\frac{x}{\sqrt{1+kx^2}}}{\sqrt{1+(\frac{x}{\sqrt{1+kx^2}})^2}} = \frac{x}{\sqrt{1 + (k+1) x^2}}
+    \end{equation*}
+
+    由数学归纳法得，$f_n(x)=\frac{x}{\sqrt{1 + n x^2}}$
+
+    (2)
+
+    \begin{equation*}
+        f(f(x)) = \frac{\frac{x}{x-1}}{\frac{x}{x-1}-1} = \frac{x}{x-(x-1)} = x
+    \end{equation*}
+    \begin{equation*}
+        f[f(f(x))] = \frac{x}{x-1} = f(x)
+    \end{equation*}
+
+    得证
+    \begin{equation*}
+        \frac{1}{f(x)} = \frac{x-1}{x}
+    \end{equation*}
+    \begin{equation*}
+        f(\frac{1}{f(x)}) = \frac{\frac{x-1}{x}}{\frac{x-1}{x}-1} = \frac{x-1}{x-1-x} = 1-x
+    \end{equation*}
+\end{solution}
+
+\begin{exercise}
+    是否存在这样的函数，它在区间[0,1]上每点取有限值，在此区间上的任何点的任意领域内无界.
+\end{exercise}
+
+\begin{solution}
+    
+    存在。如:
+    \begin{equation}
+        f(x) = 
+        \begin{cases}
+            n & x=\frac{m}{n},m\mbox{、}n\mbox{互质},n>0\\ 
+            0 & x\mbox{为无理数}
+        \end{cases}
+    \end{equation}
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.6\textwidth]{../image/狄利克雷函数}
+        \caption{在区间[0,1]上每点取有限值\\ 在此区间上的任何点的任意领域内无界}
+    \end{figure}
+\end{solution}
+
+\begin{exercise}
+    试说明能有无穷多个函数，其中每个函数$f$，均能使得$f\circ f$为$R$上的恒等函数。
+\end{exercise}
+
+\begin{solution}
+    
+    $f\circ f$为$R$上的恒等函数$\Longrightarrow $ $f$为自己的反函数
+
+    事实上，给定任意函数$g:(0,+\infty) \to (-\infty,0)$
+
+    以$g(x)\mbox{和}g^{-1}(x)$构造以下的函数$f$:
+    \begin{equation*}
+        f(x)
+        = \begin{cases}
+            g(x) & x\in (0,+\infty)\\ 
+            0 & x=0 \\ 
+            g^{-1}(x) & x \in (-\infty,0)
+        \end{cases}
+    \end{equation*}
+
+    $f\circ f$即为恒等函数
+\end{solution}
+
+\begin{exercise}
+    设$f$为$R$上的奇函数，$f(1)=a$，$f(x+2)-f(x)=f(2),\forall x \in \mathbb{R}$ .
+
+    (1)试用$a$表达$f(2)$和$f(5)$
+
+    (2)$\ a$为何值时，$f(x)$是以2为周期的周期函数. 
+\end{exercise}
+
+\begin{solution}
+    
+    (1)
+    当$x=-1$时，有
+    \begin{equation*}
+        f(1)-f(-1) = 2f(1) = f(2)
+    \end{equation*}
+
+    则$f(2)=2a$
+
+    当$x=1$时，有
+    \begin{equation*}
+        f(3)-f(1) = f(2)
+    \end{equation*}
+
+    则$f(3)=f(1)+f(2)=3a$
+
+    当$x=3$时，有
+    \begin{equation*}
+        f(5)-f(3) = f(2)
+    \end{equation*}
+
+    则$f(5)=f(3)+f(2)=5a$
+
+    (2)若$f(x)$是以2为周期的周期函数，则有
+    \begin{equation*}
+        f(x+2)-f(x)=0=f(2)
+    \end{equation*}
+
+    故 $f(2)=2a=0 \Rightarrow a=0$
+\end{solution}
+
+\begin{exercise}
+    设$f(x)=1-x+\lfloor x \rfloor$,$g(x)=\sec x$,说明这时$f(x)-g(x)$为什么不是周期函数.类似地,$f(x)+g(x)$也如此.从而周期函数的和和差未必是周期函数.
+\end{exercise}
+
+\begin{solution}
+    
+    易得,$f(x)$以$T_1=1$为最小正周期,$g(x)$以$T_2=2\pi$为周期
+
+    假设$f(x)-g(x)$以$T$为周期,则有
+    \begin{equation*}
+        f(x+T)-g(x+T)=f(x)-g(x)
+    \end{equation*}
+
+    令$x=0$，有
+    \begin{equation*}
+        f(T)-g(T)=f(0)-g(0)=0
+    \end{equation*}
+    
+    即
+    \begin{equation}
+        1-T+\lfloor T \rfloor= \sec T   \label{1.1.43}
+    \end{equation}
+
+    \cref{1.1.43}仅在$T=0$时成立，这与周期不等于0矛盾
+
+    故$f(x)-g(x)$不是周期函数
+
+    同理得，$f(x)+g(x)$也不是周期函数
+\end{solution}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../image/1-x+[x]}
+    \caption{周期函数之和差未必为周期函数}
+\end{figure}
+
+\begin{exercise}[$\ $(双镜效应)]
+    设$f$是$\mathbb{R}$上的实值函数,$f$的图像以直线$x=b$和直线$x=c(b\ne c)$为对称轴,试证$f$必是周期函数,且周期为$T=2|b-c|$
+\end{exercise}
+
+\begin{proof}
+    
+    $f$的图像以直线$x=b$和直线$x=c(b\ne c)$为对称轴,则有
+    \begin{equation}
+        f(x)=f(2b-x) \label{1.1.44}
+    \end{equation}
+    \begin{equation}
+        f(x)=f(2c-x)    \label{1.1.45}
+    \end{equation}
+    
+    联立\cref{1.1.44},\cref{1.1.45},得
+    \begin{equation*}
+        f(2b-x)=f(2c-x)
+    \end{equation*}
+
+    令$t=2b-x$,则$x=2b-t$
+    \begin{equation*}
+        f(t)=f(t+2c-2b)
+    \end{equation*}
+
+    即$f$是周期函数,且以$T=2|b-c|$为周期
+\end{proof}
+
+\vspace{5pt}
+\begin{exercise}
+    设$f$是$\mathbb{R}$上的奇函数,并且以直线$x=a(a\ne 0)$作为对称轴,试证$f$必为周期函数,并求其周期. 
+\end{exercise}
+
+\begin{proof}
+
+    $f$是$\mathbb{R}$上的奇函数,则
+    \begin{equation}
+        f(x)=-f(-x) \label{1.1.46}
+    \end{equation}
+
+    $f$以直线$x=a(a\ne 0)$作为对称轴,则
+    \begin{equation}
+        f(x)=f(2a-x)    \label{1.1.47}
+    \end{equation}
+
+    多次利用\cref{1.1.46},\cref{1.1.47},得
+    \begin{equation*}
+        f(x)=f(2a-x)=-f(x-2a)=-f(2a-(x-2a))=-f(4a-x)=f(x-4a)
+    \end{equation*}
+    
+    故$f$为周期函数,周期为$T=4|a|$. 
+\end{proof}
+
+\vspace{5pt}
+\begin{exercise}
+    设$f$为$\mathbb{R}$上以$T$为周期的周期函数$(T>0)$,且$f$在$[0,T)$上严格单调增，试证明$f(x^2)$不可能是周期函数. 
+\end{exercise}
+
+\begin{proof}
+
+    假设$f(x^2)$以$T_0(T_0\ne 0)$为周期,则有
+    \begin{equation}
+        f((x+T_0)^2)=f(x^2+2xT_0+T_0^2)=f(x^2)  \label{1.1.48}
+    \end{equation}
+
+    令$x=0$,则
+    \begin{equation*}
+        f(T_0^2)=f(0)
+    \end{equation*}
+
+    又$f$在$[0,T)$上严格单调增,
+
+    故$f(x)$在一个周期内不肯能相等,则
+    \begin{equation}
+        T_0^2=nT \quad \mbox{n为正整数} \label{1.1.49}
+    \end{equation}
+
+    将\cref{1.1.49}代入\cref{1.1.48},得
+    \begin{equation*}
+        f(x^2+2x\sqrt{nT}+nT)=f(x^2)
+    \end{equation*}
+
+    令$x=\sqrt{(n+1)T}$,
+    \begin{equation*}
+        f((n+1)T+2\sqrt{n(n+1)}T+nT)=f((n+1)T)
+    \end{equation*}
+    \begin{equation*}
+        f(2\sqrt{n(n+1)}T)=f(0)\Longrightarrow \sqrt{n(n+1)}\mbox{为正整数}
+    \end{equation*}
+
+    但相邻两正整数之乘积不可能是平方数,产生矛盾
+
+    故$f(x^2)$不可能是周期函数
+\end{proof}
+
+\clearpage
+\begin{exercise}
+    证明确界的关系式:
+
+    (1)叙述数集$A$的确界定义,并证明:
+    对于任意有界数列$\{x_n\}$,$\{y_n\}$,总有
+    \begin{equation}
+        \sup\{x_n+y_n\}\le \sup\{x_n\}+\sup\{y_n\}
+    \end{equation}
+
+    (2)设$A,B$是两个由非负数组成的任意数集,试证明:
+    \begin{equation}
+        \underset{x\in A}{\sup x} \cdot \underset{y \in B}{\sup y} = \underset{y \in B}{\underset{x \in A}{\sup xy}}
+    \end{equation}
+\end{exercise}
+
+\begin{proof}
+    (1)确界定义:
+    
+    设非空数集A有上界，若存在实数$\beta$满足以下两个条件:
+
+    \ding{172}$\forall x\in A$,有$x\le \beta$\quad($\beta$是$A$的上界)
+    \qquad
+    \ding{173}$\forall \epsilon>0$,$\exists x_0 \in A$,有$x_0>\beta - \epsilon$ \quad ($\beta$是$A$的最小上界)
+
+    则称$\beta$为$A$的上确界,记为$\sup A$
+    \vspace{3pt}
+
+    设非空数集A有下界，若存在实数$\alpha$满足以下两个条件:
+
+    \ding{172}$\forall x\in A$,有$x\ge \alpha$\quad($\alpha$是$A$的下界)
+    \qquad
+    \ding{173}$\forall \epsilon>0$,$\exists x_0 \in A$,有$x_0<\alpha + \epsilon$ \quad ($\alpha$是$A$的最大下界)
+
+    则称$\alpha$为$A$的下确界,记为$\inf A$
+
+    \vspace{3pt}
+    $\forall n$，$x_n+y_n\le \sup\{x_n\}+\sup\{y_n\}$,
+    故$\sup\{x_n\}+\sup\{y_n\}$为$\{x_n+y_n\}$的一个上界
+
+    由上确界的定义得,$\sup\{x_n+y_n\}\le \sup\{x_n\}+\sup\{y_n\}$
+
+    \vspace{3pt}
+    (2)一方面,有$0\le x \le \underset{x\in A}{\sup x}(\forall x\in A)$,
+    $0 \le y \le \underset{y\in B}{\sup y}(\forall y\in B)$,
+    可得$0\le xy \le \underset{x\in A}{\sup x}\cdot \underset{y\in B}{\sup y} (\forall x\in A,\forall y\in B)$
+
+    故$\underset{x\in A}{\sup x}\cdot \underset{y\in B}{\sup y} $是$\{xy|\forall x\in A,\forall y\in B\}$的一个上界,
+    由上确界的定义得,$\underset{y \in B}{\underset{x \in A}{\sup xy}}\le \underset{x\in A}{\sup x}\cdot \underset{y\in B}{\sup y}$
+
+    另一方面,$\forall x\in A$,有$xy \le \underset{y \in B}{\underset{x \in A}{\sup xy}}(\forall y \in B)$,故$\underset{y \in B}{\underset{x \in A}{\sup xy}}(\forall y \in B)$为$\{xy|\forall y \in B\}$的一个上界,
+
+    由上确界的定义得，$x \cdot \underset{y\in B}{\sup y} \le \underset{y \in B}{\underset{x \in A}{\sup xy}}(\forall x\in A)$
+
+    故$\underset{y \in B}{\underset{x \in A}{\sup xy}}$为$\{x \cdot \underset{y\in B}{\sup y}|\forall x\in A\}$的一个上界,由上确界的定义得,$\underset{x\in A}{\sup x} \cdot \underset{y \in B}{\sup y} \le \underset{y \in B}{\underset{x \in A}{\sup xy}}$
+
+    综上,$\underset{x\in A}{\sup x} \cdot \underset{y \in B}{\sup y} = \underset{y \in B}{\underset{x \in A}{\sup xy}}$
+\end{proof}
+
+\begin{exercise}
+    试证明:若$\underset{n \to \infty}{\lim}x_n=+\infty$,则$\{x_n\}$必达到下确界(即$\exists m \in \mathbb{N}$,使得$x_m=\inf \{x_n\}$). 
+\end{exercise} 
+
+\begin{proof}
+    $\underset{n \to \infty}{\lim}x_n=+\infty$,
+    故$\forall M,\exists N \in \mathbb{N^+}$,使得$\forall n>N$时,有$x_n>M$,
+
+    令$M=x_1$,则$\exists N \in \mathbb{N^+}$,使得$\forall n>N$时,有$x_n>x_1$,
+
+    取$x_m=\min \{x_1,x_2,\cdots,x_N\}$,
+
+    则$\forall n \in \mathbb{N^+}$,$x_n\ge x_m$,又$x_m \in \{x_n\}$,则$x_m=\inf \{x_n\}$
+\end{proof}
+
+\vspace{4pt}
+\begin{exercise}
+    设$f,g$是$\mathbb{R}$上的实值函数,且
+    \begin{equation*}
+        f(x+y)+f(x-y)=2f(x)g(y)\quad \forall x,y\in \mathbb{R}
+    \end{equation*}
+
+    在$\mathbb{R}$上,$f(x)$不恒等于0,但有界,试证明:$|g(y)|\le 1 (\forall y \in \mathbb{R})$
+\end{exercise}
+
+\begin{proof}
+    $f(x)$有界$\Longrightarrow |f(x)|$有界 
+
+    由确界原理得,$|f(x)|$有上确界$M$,即$\forall \epsilon >0,\exists x\in \mathbb{R},$使得$M-\epsilon<|f(x)|\le M$
+
+    对此处的$\epsilon$和$x$,有$\forall y\in \mathbb{R}$
+    \begin{equation*}
+        2M\ge |f(x+y)|+|f(x-y)|\ge |f(x+y)+f(x-y)|=|2f(x)g(y)|
+    \end{equation*}
+    \begin{equation*}
+        =2|f(x)||g(y)|>2(M-\epsilon)|g(y)|
+    \end{equation*}
+
+    令$\epsilon \to 0$,则有
+    \begin{equation*}
+        2M \ge 2M |g(y)|
+    \end{equation*}
+
+    即$|g(y)|\le 1$,得证
+\end{proof}
+
+\clearpage
+\begin{exercise}
+    设$f$是闭区间$[a,b]$上的增函数(不一定连续),如果$f(a)\ge a$,$f(b)\le b$,试证明:$\exists x_0 \in [a,b]$,使得$f(x_0)=x_0$
+\end{exercise}
+
+\begin{proof}
+    
+    $f(a)\ge a \Longrightarrow A=\{x|f(x)\ge x\}\subset [a,b]$非空有界$\xlongrightarrow{\mbox{确界原理}}$ $x_0=\sup A\in [a,b]$有意义
+
+    \ding{172}若$y_0=f(x_0)>x_0$,由于$f$单调增,有$f(y_0)\ge f(x_0)=y_0$,则$y_0\in A$
+    
+    故$y_0\le \sup A=x_0$,产生矛盾
+
+    \ding{173}若$y_0=f(x_0)<x_0$,由$x_0=\sup A$得,$\exists x_1\in A$,有$y_0<x_1<x_0$,
+
+    由$f$单调增及$x_1 \in A$,可得$f(x_1)\le f(x_0)=y_0<x_1\le f(x_1)$
+
+    即$f(x_1)<f(x_1)$,产生矛盾
+
+    综上所述,$y_0=f(x_0)=x_0$
+\end{proof}
+
+\vspace{4pt}
+\begin{exercise}
+    设$f(x)$在$[0,1]$上单调增,$f(0)>0$,$f(1)<1$. 
+    试证明:$\exists x_0 \in (0,1)$,使得$f(x_0)=x_0^2$
+\end{exercise}
+
+\begin{proof}
+
+    $f(0)> 0 \Longrightarrow A=\{x|f(x)\ge x^2\}\subset [0,1]$非空有界$\xlongrightarrow{\mbox{确界原理}}$ $x_0=\sup A\in [0,1]$有意义
+
+    \ding{172}若$y_0=f(x_0)>x_0^2$,则$\sqrt{y_0}>x_0,$由于$f$单调增,有$f(\sqrt{y_0})> f(x_0)=y_0=(\sqrt{y_0})^2$,则$\sqrt{y_0}\in A$
+    
+    故$\sqrt{y_0}\le \sup A=x_0$,产生矛盾
+
+    \ding{173}若$y_0=f(x_0)<x_0^2$,则$\sqrt{y_0}<x_0,$由$x_0=\sup A$得,$\exists x_1\in A$,有$\sqrt{y_0}<x_1<x_0$,
+
+    由$f$单调增及$x_1 \in A$,可得$f(x_1)\le f(x_0)=y_0<x_0^2<x_1^2\le f(x_1)$
+
+    即$f(x_1)<f(x_1)$,产生矛盾
+
+    综上所述,$y_0=f(x_0)=x_0$
+\end{proof}
