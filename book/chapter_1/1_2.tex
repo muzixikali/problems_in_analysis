@@ -1,1 +1,142 @@
 \section{用定义证明极限的存在性}
+\vspace{-14pt}
+\subsection{用定义证明极限}
+\vspace{-9pt}
+\subsubsection{\texorpdfstring{$\epsilon-N$}方法}
+\vspace{-10pt}
+
+\begin{definition}[数列极限$\epsilon-N$语言]
+    \begin{equation*}
+        \forall \epsilon>0,\exists N \in \mathbb{N}^+,\mbox{使得}n>N\mbox{时,有}|x_n-A|<\epsilon\Longleftrightarrow \lim\limits_{n\to \infty} x_n=A
+    \end{equation*}
+\end{definition}
+
+\begin{note}
+    要证明数列极限,关键点在于根据$\epsilon$寻找对应的$N$
+
+    (1)等价代换法:直接解$|x_n-A|<\epsilon$得$n>N(\epsilon)$,则令$N=[N(\epsilon)]+1$
+
+    (2)放大法:若不等式$|x_n-A|<\epsilon$很难解,则可放大$|x_n-A|$为$H(n)$,使得从$H(n)<\epsilon$中可解得$n>N(\epsilon)$,
+
+    则令$N=[N(\epsilon)]+1$
+
+    (3)分步法:若$|x_n-A|$难以直接放大,可先假定$n$足够大,即$n>N_1$,此时$|x_n-A|$可放大为$H(n)$,使得从$H(n)<\epsilon$中可解得$n>N(\epsilon)$,令$N_2=[N(\epsilon)]+1$,再令$N=\max \{N_1,N_2\}$
+
+    对于$\lim\limits_{x\to x_0}f(x)=a$的证明,也有类似的函数极限$\epsilon-\delta$语言
+\end{note}
+
+\begin{example}\label{例题1.2.1}
+    (1)用$\epsilon-N$方法证明$\lim\limits_{n\to \infty}\sqrt[n]{n+1}=1$
+
+    (2)设$\lim\limits_{n\to \infty} x_n=A\mbox{(有限数)}$,试证明:$\lim\limits_{n\to \infty}\frac{x_1+x_2+\cdots+x_n}{n}=A$
+
+    (3)设$\{a_n\}$是一数列$(a_n\ne 0)$,满足$\lim\limits_{n\to \infty}a_n=0$.定义数集$P=\{ka_i\mid k\in \mathbb{Z},i\in \mathbb{N}\}$,
+    试证明:对任何实数$b$,存在数列$\{b_n\}\subset P$,使得$\lim\limits b_n=b$
+\end{example}
+
+\begin{proof}
+    (1)[放大法]欲解$|\sqrt[n]{n+1}-1|=\sqrt[n]{n+1}-1<\epsilon$,很难,考虑放大法.
+
+    设$b_n=\sqrt[n]{n+1}-1$,则$n+1=(b_n+1)^n=1+C_n^1b_n+C_n^2b_n^2+\cdots $
+
+    又$b_n>0$,故$(n+1)>C_n^2b_n=\frac{n(n-1)}{2}b_n^2$,即$b_n< \sqrt{\frac{2(n+1)}{n(n-1)}}$,
+
+    解$\sqrt{\frac{2(n+1)}{n(n-1)}}\le\sqrt{\frac{2(n+1)+2(n-1)}{n(n-1)}}=\frac{2}{\sqrt{n-1}}<\epsilon$得$n>\frac{4}{\epsilon^2}+1$
+    \begin{equation*}
+        \forall \epsilon>0,\exists N=[\frac{4}{\epsilon^2}]+1 \in \mathbb{N}^+,\mbox{使得}n>N\mbox{时,有}|\sqrt[n]{n+1}-1|<\frac{2}{\sqrt{n-1}}<\epsilon\Longleftrightarrow \lim\limits_{n\to \infty}\sqrt[n]{n+1}=1
+    \end{equation*}
+
+    (2)[分步法]欲解$|\frac{x_1+x_2+\cdots+x_n}{n}-A|\le \frac{|x_1-A|+|x_2-A|+\cdots+|x_n-A|}{n}<\epsilon$
+
+    注意到$\lim\limits_{n\to \infty} x_n=A \Longrightarrow\forall \epsilon>0,\exists N_1 \in \mathbb{N}^+,\mbox{使得}n>N_1\mbox{时,有}|x_n-A|<\frac{\epsilon}{2}$
+
+    则$\frac{|x_1-A|+|x_2-A|+\cdots+|x_n-A|}{n}=\frac{|x_1-A|+\cdots+|x_{N_1}-A|+\cdots+|x_n-A|}{n} \le \frac{|x_1-A|+\cdots+|x_{N_1-1}|}{n}+\frac{(n-N_1)\epsilon}{n}$
+    $$\le \frac{|x_1-A|+\cdots+|x_{N_1-1}|}{n}+\frac{\epsilon}{2}$$
+
+    又$\exists N_2\in \mathbb{N}^+$,使得$n>N_2$时,有$\frac{|x_1-A|+\cdots+|x_{N_1-1}|}{n}\le \frac{\epsilon}{2}$,则
+    \begin{equation*}
+        \forall \epsilon>0,\exists N=\max \{N_1,N_2\},\mbox{使得}n>N\mbox{时,有}|\frac{x_1+x_2+\cdots+x_n}{n}-A|<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon\Longleftrightarrow \lim\limits_{n\to \infty} \frac{x_1+x_2+\cdots+x_n}{n}=A
+    \end{equation*}
+
+    \begin{figure}[htbp!]
+        \centering
+        \includegraphics[width=0.5\textwidth]{../image/点列问题}
+        \caption{\cref{例题1.2.1}第(3)问以$a_n=\frac{1}{n},b=0.5,1,1.5$为例}
+    \end{figure}
+
+    (3)对每个$a_i$,集合$Q_i=\{ka_i|k\in \mathbb{Z}\}$组成一个格点集:格点间距为$d_i=|a_i|$.
+
+    对于每个实数$b$,总存在某个$k\in \mathbb{Z}$,使得$b\in[ka_i,(k+1)a_i]$,即$|b-ka_i|\le d_i$
+
+    又$\lim\limits_{n\to \infty}a_n=0\Longrightarrow \forall \epsilon_m=\frac{1}{m}>0,\exists n_m$,有$0<|a_{n_m}|=d_{n_m}<\epsilon_m$
+
+    对$b$和$a_{n_m}$,存在$k_m\in \mathbb{Z}$,使得$|b-k_ma_{n_m}|\le d_{n_m}<\epsilon_m$
+
+    记$b_m=k_ma_{n_m}$,令$\epsilon_m\to 0$,即$m\to \infty$,则有$b_m\to b$,故$\{b_m\}\subset P$即为一个满足条件的数列
+\end{proof}
+
+\begin{example}
+    证明:若$p_k>0(k=1,2,\cdots)$且$\lim\limits_{n\to \infty}\frac{p_n}{p_1+p_2+\cdots+p_n}=0$,$\lim\limits_{n \to \infty} a_n=a$,则$\lim\limits_{n\to \infty}\frac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n}=a$
+\end{example}
+
+\begin{proof}
+
+    欲解$|\frac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n}-a|\le \frac{p_1|a_n-a|+\cdots+p_n|a_1-a|}{p_1+p_2+\cdots+p_n}<\epsilon$
+
+    注意到$\lim\limits_{n\to \infty} a_n=a \Longrightarrow\forall \epsilon>0,\exists N_1 \in \mathbb{N}^+,\mbox{使得}n>N_1\mbox{时,有}|a_n-a|<\frac{\epsilon}{2}$,则
+    $$\frac{p_1|a_n-a|+\cdots+p_{n-N_1}|a_{N_1+1}-a|+\cdots+p_n|a_1-a|}{p_1+p_2+\cdots+p_n}< \frac{\epsilon}{2}\cdot \frac{p_1+\cdots+p_{n-N_1}}{p_1+p_2+\cdots+p_n}+\frac{p_{n-N_1+1}|a_{N_1}-a|+\cdots+p_n|a_1-a|}{p_1+p_2+\cdots+p_n}$$
+    $$<\frac{\epsilon}{2}+\frac{p_{n-N_1+1}|a_{N_1}-a|+\cdots+p_n|a_1-a|}{p_1+p_2+\cdots+p_n}$$
+
+    设$M=\max \{|a_{N_1}-a|,\cdots,|a_1-a|\}$,
+    则$\frac{p_{n-N_1+1}|a_{N_1}-a|+\cdots+p_n|a_1-a|}{p_1+p_2+\cdots+p_n}<\frac{p_{n-N_1+1}+\cdots+p_n}{p_1+p_2+\cdots+p_n}M$
+    \begin{equation*}
+        0<\frac{p_{n-i+1}}{p_1+p_2+\cdots+p_n}<\frac{p_{n-i+1}}{p_1+p_2+\cdots+p_{n-i+1}}\to 0\Longrightarrow \lim\limits_{n\to \infty}\frac{p_{n-i+1}}{p_1+p_2+\cdots+p_n}=0\quad i=2,\cdots,N_1
+    \end{equation*}
+
+    故$\lim\limits_{n\to \infty} \frac{p_{n-N_1+1}+\cdots+p_n}{p_1+p_2+\cdots+p_n} = 0 
+    \Longrightarrow
+    \exists N_2\in \mathbb{N}^+$,使得$n>N_2$时,$\frac{p_{n-N_1+1}+\cdots+p_n}{p_1+p_2+\cdots+p_n}<\frac{\epsilon}{2M}$
+    $$\forall \epsilon,\exists N=\max \{N_1,N_2\},\mbox{使得}n>N\mbox{时,有}|\frac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n}-a|<\frac{\epsilon}{2}+\frac{\epsilon}{2M}\cdot M=\epsilon$$ 
+    $$\Longrightarrow \lim\limits_{n\to \infty}\frac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n}=a$$
+\end{proof}
+
+\begin{example}
+    设实数列$\{x_n\}$满足$\lim\limits_{n\to \infty}(x_n-x_{n-2})=0$,证明:$\lim\limits_{n\to \infty}\frac{x_n-x_{n-1}}{n}=0$
+\end{example}
+
+\begin{proof}
+    
+    欲解$|\frac{x_n-x_{n-1}}{n}|<\epsilon$. 
+
+    设$y_n=|x_n-x_{n-1}|$,则$|x_n-x_{n-2}|=|x_n-x_{n-1}+x_{n-1}-x_{n-2}|\ge ||x_n-x_{n-1}|+|x_{n-1}-x_{n-2}||=|y_n-y_{n-1}|\ge 0$
+
+    故$\lim\limits_{n\to \infty}|y_n-y_{n-1}|=0
+    \Longrightarrow \forall \epsilon>0,\exists N_1\in \mathbb{N}^+,\mbox{使得}n>N_1\mbox{时},|y_n-y_{n-1}|<\epsilon$
+
+    则$$|\frac{x_n-x_{n-1}}{n}|=\frac{y_n}{n}\le
+    \frac{|y_n-y_{n-1}|+|y_{n-1}-y_{n-2}|+\cdots +|y_{N_1+1}-y_{N_1}|}{n}+\frac{y_{N_1}}{n}<\frac{(n-N_1)}{n}\cdot \frac{\epsilon}{2}+\frac{y_{N_1}}{n}<\frac{\epsilon}{2}+\frac{y_{N_1}}{n}$$
+
+    又$\exists N_2\in \mathbb{N}^+$,使得$n>N_2$时,有$\frac{y_{N_1}}{n}<\frac{\epsilon}{2}$
+
+    故$\forall \epsilon,\exists N=\max \{N_1,N_2\}$,使得$n>N$时,有$|\frac{x_n-x_{n-1}}{n}|<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon\Longrightarrow \lim\limits_{n\to \infty}\frac{x_n-x_{n-1}}{n}=0$
+\end{proof}
+
+\begin{definition}[函数极限$\epsilon-\delta$语言]
+    \begin{equation*}
+        \forall \epsilon>0,\exists \delta>0,\mbox{使得}|x-x_0|<\delta\mbox{时,有}|f(x)-a|<\epsilon\Longleftrightarrow \lim\limits_{x\to x_0} f(x)=a
+    \end{equation*}
+\end{definition}
+
+\begin{example}
+    按极限定义($\epsilon-\delta$语言)证明:$\lim\limits_{x\to 1}\sqrt{\frac{7}{16x^2-9}}=1$
+\end{example}
+
+\begin{proof}
+    欲解$|\sqrt{\frac{7}{16x^2-9}}-1|<\epsilon$得$|x-1|<\delta(\epsilon)$.考虑放缩. 
+    $$|\sqrt{\frac{7}{16x^2-9}}-1|=|\frac{\frac{7}{16x^2-9}-1}{\sqrt{\frac{7}{16x^2-9}}+1}|\le |\frac{7}{16x^2-9}-1|=\frac{16|x+1||x-1|}{|(4x+3)(4x-3)|}\le \frac{16|x+1||x-1|}{3|4x-3|}$$
+
+    还是较难. 考虑分步法,设$|x-1|<1$,则$0<x<2\Longrightarrow |x+1|<3\Longrightarrow \frac{16|x+1||x-1|}{3|4x-3|}<\frac{16|x-1|}{|4x-3|}=\frac{4|x-1|}{|x-\frac{3}{4}|}$
+
+    进一步,设$|x-1|<\frac{1}{8}$,则$\frac{7}{8}<x<\frac{9}{8}\Longrightarrow |x-\frac{3}{4}|>\frac{1}{8}\Longrightarrow \frac{16|x+1||x-1|}{3|4x-3|}<32|x-1|$
+    $$\forall \epsilon>0,\exists \delta=\min \{\frac{1}{8},\frac{1}{32}\epsilon\},\mbox{使得}|x-1|<\delta\mbox{时，有}|\sqrt{\frac{7}{16x^2-9}}-1|<\epsilon\Longrightarrow \lim\limits_{x\to 1}\sqrt{\frac{7}{16x^2-9}}=1$$
+\end{proof}

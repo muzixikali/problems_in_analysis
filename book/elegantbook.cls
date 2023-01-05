@@ -1222,7 +1222,8 @@
 \renewcommand{\headrulewidth}{1pt}
 % \renewcommand{\headrule}{}
 \fancypagestyle{plain}{\renewcommand{\headrulewidth}{0pt}\fancyhf{}\renewcommand{\headrule}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection\, #1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\, #1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\, #1}{}}
 \renewcommand{\chaptermark}[1]{\markboth{\xchaptertitle\, #1}{}}
 
 
