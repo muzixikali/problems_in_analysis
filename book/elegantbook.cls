@@ -442,6 +442,7 @@
   \newcommand{\problemname}{问题} % 问题
   \newcommand{\exercisename}{练习} % 练习=习题
   \newcommand{\remarkname}{注}
+  \newcommand{\practicename}{小试牛刀}
   \newcommand{\assumptionname}{假设}
   \newcommand{\conclusionname}{结论}
   \newcommand{\solutionname}{解}
@@ -1123,7 +1124,17 @@
   \refstepcounter{exer}
   \par\noindent\makebox[-3pt][r]{
     \scriptsize\color{red!90}\HandPencilLeft\quad}
-    \textbf{\color{main}{\exercisename} \theexer #1 }\rmfamily}{
+    \textbf{\color{third}{\exercisename} \theexer #1 }\rmfamily}{
+    \par\ignorespacesafterend}
+
+\newcounter{practice}[section]
+\setcounter{practice}{0}
+\renewcommand{\thepractice}{\thesection.\arabic{practice}}
+\newenvironment{practice}[1][]{
+  \refstepcounter{practice}
+  \par\noindent\makebox[-3pt][r]{
+    \scriptsize\color{red!90}\HandPencilLeft\quad}
+    \textbf{\color{third}{\practicename} \thepractice #1 }\rmfamily}{
     \par\ignorespacesafterend}
 
 %% Problem with counter

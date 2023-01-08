@@ -93,10 +93,10 @@
         0<\frac{p_{n-i+1}}{p_1+p_2+\cdots+p_n}<\frac{p_{n-i+1}}{p_1+p_2+\cdots+p_{n-i+1}}\to 0\Longrightarrow \lim\limits_{n\to \infty}\frac{p_{n-i+1}}{p_1+p_2+\cdots+p_n}=0\quad i=2,\cdots,N_1
     \end{equation*}
 
-    故$\lim\limits_{n\to \infty} \frac{p_{n-N_1+1}+\cdots+p_n}{p_1+p_2+\cdots+p_n} = 0 
-    \Longrightarrow
-    \exists N_2\in \mathbb{N}^+$,使得$n>N_2$时,$\frac{p_{n-N_1+1}+\cdots+p_n}{p_1+p_2+\cdots+p_n}<\frac{\epsilon}{2M}$
-    $$\forall \epsilon,\exists N=\max \{N_1,N_2\},\mbox{使得}n>N\mbox{时,有}|\frac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n}-a|<\frac{\epsilon}{2}+\frac{\epsilon}{2M}\cdot M=\epsilon$$ 
+    故$\lim\limits_{n\to \infty} \frac{p_{n-N_1+1}+\cdots+p_n}{p_1+p_2+\cdots+p_n} = 0
+        \Longrightarrow
+        \exists N_2\in \mathbb{N}^+$,使得$n>N_2$时,$\frac{p_{n-N_1+1}+\cdots+p_n}{p_1+p_2+\cdots+p_n}<\frac{\epsilon}{2M}$
+    $$\forall \epsilon,\exists N=\max \{N_1,N_2\},\mbox{使得}n>N\mbox{时,有}|\frac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n}-a|<\frac{\epsilon}{2}+\frac{\epsilon}{2M}\cdot M=\epsilon$$
     $$\Longrightarrow \lim\limits_{n\to \infty}\frac{p_1a_n+p_2a_{n-1}+\cdots+p_na_1}{p_1+p_2+\cdots+p_n}=a$$
 \end{proof}
 
@@ -105,16 +105,16 @@
 \end{example}
 
 \begin{proof}
-    
-    欲解$|\frac{x_n-x_{n-1}}{n}|<\epsilon$. 
+
+    欲解$|\frac{x_n-x_{n-1}}{n}|<\epsilon$.
 
     设$y_n=|x_n-x_{n-1}|$,则$|x_n-x_{n-2}|=|x_n-x_{n-1}+x_{n-1}-x_{n-2}|\ge ||x_n-x_{n-1}|+|x_{n-1}-x_{n-2}||=|y_n-y_{n-1}|\ge 0$
 
     故$\lim\limits_{n\to \infty}|y_n-y_{n-1}|=0
-    \Longrightarrow \forall \epsilon>0,\exists N_1\in \mathbb{N}^+,\mbox{使得}n>N_1\mbox{时},|y_n-y_{n-1}|<\epsilon$
+        \Longrightarrow \forall \epsilon>0,\exists N_1\in \mathbb{N}^+,\mbox{使得}n>N_1\mbox{时},|y_n-y_{n-1}|<\epsilon$
 
     则$$|\frac{x_n-x_{n-1}}{n}|=\frac{y_n}{n}\le
-    \frac{|y_n-y_{n-1}|+|y_{n-1}-y_{n-2}|+\cdots +|y_{N_1+1}-y_{N_1}|}{n}+\frac{y_{N_1}}{n}<\frac{(n-N_1)}{n}\cdot \frac{\epsilon}{2}+\frac{y_{N_1}}{n}<\frac{\epsilon}{2}+\frac{y_{N_1}}{n}$$
+        \frac{|y_n-y_{n-1}|+|y_{n-1}-y_{n-2}|+\cdots +|y_{N_1+1}-y_{N_1}|}{n}+\frac{y_{N_1}}{n}<\frac{(n-N_1)}{n}\cdot \frac{\epsilon}{2}+\frac{y_{N_1}}{n}<\frac{\epsilon}{2}+\frac{y_{N_1}}{n}$$
 
     又$\exists N_2\in \mathbb{N}^+$,使得$n>N_2$时,有$\frac{y_{N_1}}{n}<\frac{\epsilon}{2}$
 
@@ -123,7 +123,7 @@
 
 \begin{definition}[函数极限$\epsilon-\delta$语言]
     \begin{equation*}
-        \forall \epsilon>0,\exists \delta>0,\mbox{使得}|x-x_0|<\delta\mbox{时,有}|f(x)-a|<\epsilon\Longleftrightarrow \lim\limits_{x\to x_0} f(x)=a
+        \forall \epsilon>0,\exists \delta>0,\mbox{使得}0<|x-x_0|<\delta\mbox{时,有}|f(x)-a|<\epsilon\Longleftrightarrow \lim\limits_{x\to x_0} f(x)=a
     \end{equation*}
 \end{definition}
 
@@ -132,11 +132,113 @@
 \end{example}
 
 \begin{proof}
-    欲解$|\sqrt{\frac{7}{16x^2-9}}-1|<\epsilon$得$|x-1|<\delta(\epsilon)$.考虑放缩. 
+    欲解$|\sqrt{\frac{7}{16x^2-9}}-1|<\epsilon$得$|x-1|<\delta(\epsilon)$.考虑放缩.
     $$|\sqrt{\frac{7}{16x^2-9}}-1|=|\frac{\frac{7}{16x^2-9}-1}{\sqrt{\frac{7}{16x^2-9}}+1}|\le |\frac{7}{16x^2-9}-1|=\frac{16|x+1||x-1|}{|(4x+3)(4x-3)|}\le \frac{16|x+1||x-1|}{3|4x-3|}$$
 
     还是较难. 考虑分步法,设$|x-1|<1$,则$0<x<2\Longrightarrow |x+1|<3\Longrightarrow \frac{16|x+1||x-1|}{3|4x-3|}<\frac{16|x-1|}{|4x-3|}=\frac{4|x-1|}{|x-\frac{3}{4}|}$
 
     进一步,设$|x-1|<\frac{1}{8}$,则$\frac{7}{8}<x<\frac{9}{8}\Longrightarrow |x-\frac{3}{4}|>\frac{1}{8}\Longrightarrow \frac{16|x+1||x-1|}{3|4x-3|}<32|x-1|$
-    $$\forall \epsilon>0,\exists \delta=\min \{\frac{1}{8},\frac{1}{32}\epsilon\},\mbox{使得}|x-1|<\delta\mbox{时，有}|\sqrt{\frac{7}{16x^2-9}}-1|<\epsilon\Longrightarrow \lim\limits_{x\to 1}\sqrt{\frac{7}{16x^2-9}}=1$$
+    $$\forall \epsilon>0,\exists \delta=\min \{\frac{1}{8},\frac{1}{32}\epsilon\},\mbox{使得}0<|x-1|<\delta\mbox{时，有}|\sqrt{\frac{7}{16x^2-9}}-1|<\epsilon\Longrightarrow \lim\limits_{x\to 1}\sqrt{\frac{7}{16x^2-9}}=1$$
 \end{proof}
+
+\subsubsection{拟合法}
+
+\begin{note}
+    为了证明$\lim \limits_{n \to \infty}x_n=A$,关键在于证明$|x_n-A|$能够任意小. 为此,一般尽可能将$x_n$化简.值得注意的是,有时候$x_n$难以化简,反而$A$能够“化繁”,写成与$x_n$类似的形式.这种方法称为“拟合法”.“拟合法”思想的实质,是将单位“1”进行适当的分解.
+\end{note}
+
+\vspace{8pt}
+\begin{example}\label{例题1.2.5}
+    设$x\to 0$时,$f(x)\thicksim x,x_n=\sum\limits_{i=1}^{n}f(\frac{2i-1}{n^2}a)$,试证明$\lim \limits_{n \to \infty}x_n=a(a>0)$
+\end{example}
+
+\begin{proof}
+    注意到$a=\sum\limits_{i=1}^{n}\frac{2i-1}{n^2}a$,从而有$
+        |x_n-a|
+        =|\sum\limits_{i=1}^{n}f(\frac{2i-1}{n^2}a)-\sum\limits_{i=1}^{n}\frac{2i-1}{n^2}a|
+        =\sum\limits_{i=1}^{n}|f(\frac{2i-1}{n^2}a)-\frac{2i-1}{n^2}a|$
+
+    若能证明$\forall \epsilon>0$时,
+    \begin{equation}\label{式1.2.1}
+        \exists N\in \mathbb{N}^+,\mbox{使得}n>N\mbox{时},|f(\frac{2i-1}{n^2}a)-\frac{2i-1}{n^2}a|<\frac{2i-1}{n^2}\epsilon\quad i=1,2,\cdots,n
+    \end{equation},
+
+    则有$n>N$时,
+    $|x_n-a|
+        =\sum\limits_{i=1}^{n}|f(\frac{2i-1}{n^2}a)-\frac{2i-1}{n^2}a|
+        <\sum\limits_{i=1}^{n}\frac{2i-1}{n^2} \epsilon=\epsilon
+    $,即$\lim \limits_{n \to \infty}x_n=a(a>0)$得证
+
+    欲证\cref{式1.2.1},即证$$\exists N\in \mathbb{N}^+,\mbox{使得}n>N\mbox{时},|\frac{f(\frac{2i-1}{n^2}a)}{\frac{2i-1}{n^2}a}-1|<\frac{\epsilon}{a}\quad i=1,2,\cdots,n$$
+
+    事实上,由于$x\to 0\mbox{时},f(x)\thicksim x \Longrightarrow \forall \epsilon,\exists \delta>0,0<|x|<\delta$时,$|\frac{f(x)}{x}-1|<\frac{\epsilon}{a}$
+
+    令$\frac{2i-1}{n^2}a
+        <\frac{2n-1}{n^2}a
+        <\frac{2n}{n^2}a
+        =\frac{2}{n^2}a<\frac{2a}{n}
+        <\delta$
+    解得$n>\frac{2a}{\delta}$,令$N=[\frac{2a}{\delta}]+1$,
+
+    则$n>N\mbox{时},0<\frac{2i-1}{n^2}a<\delta\Longrightarrow|\frac{f(\frac{2i-1}{n^2}a)}{\frac{2i-1}{n^2}a}-1|<\frac{\epsilon}{a}$.得证
+\end{proof}
+
+\begin{practice}
+    证明:
+
+    (1)$\lim \limits_{n \to \infty} \prod \limits_{i=1}^{n} (1+\frac{2i-1}{n^2}a^2)=e^{a^2}$\quad
+    (2)$\lim \limits_{n \to \infty}  \prod \limits_{i=1}^{n+1} \cos \frac{\sqrt{2i-1}}{n}a^2=e^{-\frac{a^4}{2}}$
+\end{practice}
+
+\begin{proof}
+    (1)两边取对数,得需证
+    $\lim \limits_{n \to \infty} \sum \limits_{i=1}^{n} \ln(1+\frac{2i-1}{n^2}a^2)=a^2$
+
+    $x\to 0$时,$f(x)=\ln (1+x) \thicksim x $,则由\cref{例题1.2.5}得,$\lim \limits_{n \to \infty} \sum \limits_{i=1}^{n} \ln(1+\frac{2i-1}{n^2}a^2)
+        =\lim \limits_{n \to \infty} \sum \limits_{i=1}^{n} f(\frac{2i-1}{n^2}a^2)
+        =a^2$
+
+    (2)两边取对数,得需证
+    $\lim \limits_{n \to \infty} \sum \limits_{i=1}^{n+1} \ln(\cos \frac{\sqrt{2i-1}}{n}a^2)=-\frac{a^4}{2}$
+
+    $x\to 0$时,$f(x)=\ln \cos x=\ln [1+(\cos x-1)] \thicksim (\cos x-1) \thicksim -2\sin^2 \frac{x}{2} \thicksim -\frac{x^2}{2}$
+
+    同\cref{例题1.2.5}考虑拟合法,可证$\lim \limits_{n \to \infty} \sum \limits_{i=1}^{n} \ln(1+\frac{2i-1}{n^2}a^2)
+        =\lim \limits_{n \to \infty} \sum \limits_{i=1}^{n} f(\frac{\sqrt{2i-1}}{n}a^2)
+        =-\frac{(a^2)^2}{2}
+        =-\frac{a^4}{2}$
+\end{proof}
+
+\begin{practice}\label{小试牛刀1.2.2}
+    设$\lim \limits_{n \to \infty} a_n = a$,试证:
+    \begin{equation*}
+        \lim \limits_{n \to \infty} \frac{1}{2^n} (a_0+C_n^1 a_1 + C_n^2 a_2 + \cdots + C_n^k a_k + \cdots + a_n)=a
+    \end{equation*}
+\end{practice}
+
+\begin{proof}
+    $a = \frac{2^n}{2^n} a
+        =\frac{\sum\limits_{k=0}^{n} C_n^k}{2^n} a
+        =\frac{1}{2^n} \sum\limits_{k=0}^{n} C_n^k a \Longrightarrow |\frac{1}{2^n} \sum\limits_{k=0}^{n} C_n^k a_k - a|
+        =|\frac{1}{2^n} \sum\limits_{k=0}^{n} C_n^k a_k - \frac{1}{2^n} \sum\limits_{k=0}^{n} C_n^k a|
+        \le \frac{1}{2^n} \sum\limits_{i=0}^{n} C_n^k |a_k-a|$
+
+    又$\lim \limits_{n \to \infty} a_n = a
+        \Longrightarrow \forall \epsilon>0,\exists k_0 \in \mathbb{N}^+,\mbox{使得}k>k_0时,|a_k-a|<\frac{\epsilon}{2}$
+
+    而$k<k_0$时,记$M=\max |a_k-a|$,则$|a_k-a|\le M$
+
+    故$\frac{1}{2^n} \sum\limits_{k=0}^{n} C_n^k |a_k-a|=\frac{1}{2^n} \sum\limits_{k=0}^{k_0-1} C_n^k |a_k-a| + \frac{1}{2^n} \sum\limits_{k=k_0}^{n} C_n^k |a_k-a|< \frac{Mk_0n^{k_0}}{2^n} + \frac{\epsilon}{2}$
+
+    又$\lim \limits_{n \to \infty} \frac{Mk_0n^{k_0}}{2^n}=0 \Longrightarrow \exists N>k_0>0$,使得$n>N$时,有$|\frac{1}{2^n} \sum\limits_{k=0}^{n} C_n^k a_k - a| < \frac{Mk_0n^{k_0}}{2^n} + \frac{\epsilon}{2}<\frac{\epsilon}{2} + \frac{\epsilon}{2}<\epsilon$
+
+    即$\lim \limits_{n \to \infty} \frac{1}{2^n} (a_0+C_n^1 a_1 + C_n^2 a_2 + \cdots + C_n^k a_k + \cdots + a_n)=a$得证
+\end{proof}
+
+\begin{practice}
+    若\cref{小试牛刀1.2.2}中$\frac{C_n^k}{2^n}$改为一般的实数$\alpha_{n,k},\forall n\in \mathbb{N}:k=0,1,\cdots,n$,问$a_{n,k}$应该满足什么条件,该命题依然成立？即当$\lim \limits_{n \to \infty}a_n=a\Longrightarrow \lim \limits_{n \to \infty} \sum\limits_{k=0}^{n} \alpha_{n,k}a_k=a$
+\end{practice}
+
+\begin{solution}
+    $\sum\limits_{k=1}^{n} a_{n,k}=1$
+\end{solution}
