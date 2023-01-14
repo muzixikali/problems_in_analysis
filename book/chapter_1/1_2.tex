@@ -338,8 +338,8 @@
 
 \subsection{否定形式及 \texorpdfstring{$\forall$}{} 和 \texorpdfstring{$\exists$}{} 的使用法则}
 
-\begin{theorem}[数列不收敛]
-    数列$\{x_n\}$不收敛
+\begin{theorem}[数列发散]
+    数列$\{x_n\}$发散
 
     $\Longleftrightarrow \forall A \in \mathbb{R}, \exists \epsilon_0 > 0,\forall N\in \mathbb{N}^+,\exists n_0 > N$,使得$|x_{n_0}-A|\ge \epsilon_0$ \qquad (极限定义的否定形式)
     
@@ -347,6 +347,13 @@
 
     $\Longleftrightarrow \exists \epsilon_0 > 0,\forall N\in \mathbb{N}^+,\exists n_0>N,p_0\in \mathbb{N}^+$,使得$|x_{n_0+p_0}-x_{n_0}|\ge \epsilon_0 $\qquad (柯西收敛准则的否定形式2)
 \end{theorem}
+
+\begin{note}若能证明以下结论,也能说明数列$\{x_n\}$发散:
+    \begin{enumerate}
+        \item $\forall A\in \mathbb{R},\mbox{当} n\to \infty \mbox{时,有}|a_n-A| \ge \varphi (n) \to a \ne 0$
+        \item $\forall n\in \mathbb{N}^+,、\mbox{当}p\to \infty \mbox{时,有} |x_{n+p}-x_n| \ge \varphi(n,p) \to a \ne 0$
+    \end{enumerate}
+\end{note}
 
 \begin{example}
     证明:$\lim \limits_{n \to \infty} \sin n$不存在
@@ -390,6 +397,87 @@
 \end{proof}
 
 
+
+\begin{example}\label{例题1.2.10}
+    证明:数列$S_n=\sum\limits_{k=1}^{n} \frac{1}{k}(n=1,2,\cdots)$发散
+\end{example}
+
+\begin{proof}
+    
+    $\forall n\in \mathbb{N}^+,|S_{n+p}-S_n|=\frac{1}{n+1}+\cdots+\frac{1}{n+p}\ge \frac{p}{n+p} \to 1 \ne 0(p \to \infty)$
+
+    故可取$\epsilon_0=\frac{1}{2}$,则由极限的保号性得$\forall N\in \mathbb{N}^+,\forall n>N,\exists p\in \mathbb{N}^+,$使得$|S_{n+p_0}-S_{n}|\ge \frac{p}{n+p}\ge \frac{1}{2}=\epsilon_0$
+    
+    故数列$\{S_n\}$发散
+\end{proof}
+
+\begin{practice}
+    设数列$\{x_n\}$满足:当$n<m$时,有$|x_n-x_m|>\frac{1}{n}$.证明:$\{x_n\}$无界
+\end{practice}
+
+\begin{proof}
+
+    由题设得,对$x_1$,有$n>1 \Longrightarrow |x_1-x_n|>1$,即$\{x_n\}_{n=2}^\infty \notin (x_1-1,x_1+1)$
+
+    对$x_2$,有$n>2 \Longrightarrow |x_2-x_n|>\frac{1}{2}$,即$\{x_n\}_{n=3}^\infty \notin (x_2-\frac{1}{2},x_2+\frac{1}{2}) \Longrightarrow \{x_n\}_{n=3}^\infty \notin (x_1-1-\frac{1}{2},x_1+1+\frac{1}{2})$
+    $$\cdots$$
+
+    对$x_k$,有$n>k \Longrightarrow |x_k-x_n|>\frac{1}{k}$,即$\{x_n\}_{n=k+1}^\infty \notin (x_k-\frac{1}{k},x_k+\frac{1}{k}) \Longrightarrow \{x_n\}_{n=k+1}^\infty \notin (x_1-\sum\limits_{m=1}^{k} \frac{1}{m} ,x_1+\sum\limits_{m=1}^{k} \frac{1}{m})$
+
+    由\cref{例题1.2.10}得,$\sum\limits_{m=1}^{k} \frac{1}{m}$发散,又$\sum\limits_{m=1}^{k} \frac{1}{m}$单调增,则$\lim \limits_{k \to \infty} \sum\limits_{m=1}^{k} \frac{1}{m}=+\infty$,故$\{x_n\}$一定无界
+\end{proof}
+
+\subsection{利用单调有界原理证明极限存在}
+
+\begin{theorem}[单调有界原理]
+    若数列$\{x_n\}$单调增,且有上界$\Longrightarrow$ $\{x_n\}$存在极限,且极限$\lim \limits_{n \to \infty} x_n = \underset{n}{\sup} \{x_n\}$
+
+    若数列$\{x_n\}$单调减,且有下界$\Longrightarrow$ $\{x_n\}$存在极限,且极限$\lim \limits_{n \to \infty} x_n = \underset{n}{\inf} \{x_n\}$
+\end{theorem}
+
+\begin{example}
+    证明:数列$x_n=1+\frac{1}{2}+\cdots+\frac{1}{n}-\ln n(n=1,2,\cdots)$单调减且有下界,从而有极限.此极限称为欧拉(Euler)常数,以下用$C$表示.于是,
+    $$1+\frac{1}{2}+\cdots+\frac{1}{n} = C + \ln n +\epsilon_n \quad \mbox{其中}, \lim \limits_{n \to \infty} \epsilon_n = 0$$
+\end{example}
+
+\begin{proof}
+
+    由定理\ref{定理1.1.4}处的笔记可得$\frac{1}{n+1}<\ln(1+\frac{1}{n})<\frac{1}{n}$
+
+    $x_{n+1}-x_n=\frac{1}{n+1}-\ln (n+1)+\ln n
+    =\frac{1}{n+1}-\ln \frac{n+1}{n}
+    =\frac{1}{n+1}-\ln (1+\frac{1}{n})<0$
+
+    故$\{x_n\}$单调减 
+
+    又$x_n=\sum\limits_{k=1}^{n} \frac{1}{k}-\ln n
+    =\sum\limits_{k=1}^{n} \frac{1}{k}-\ln  (\frac{n}{n-1} \cdot \frac{n-1}{n-2} \cdots \frac{3}{2} \cdot \frac{2}{1})
+    =\sum\limits_{k=1}^{n} \frac{1}{k}-\sum\limits_{k=1}^{n-1}\ln (1+\frac{1}{k})
+    =\sum\limits_{k=1}^{n} [\frac{1}{k}-\ln (1+\frac{1}{k})]+\frac{1}{n}>\frac{1}{n}>0$
+
+    故$\{x_n\}$有下界0
+
+    综上,由单调有界原理得,$\{x_n\}$存在极限
+\end{proof}
+
+\begin{example}
+    设$x_n=\sum\limits_{k=1}^{n} \frac{1}{\sqrt{k}}-2\sqrt{n}$,证明$\lim \limits_{n \to \infty} x_n$存在
+\end{example}
+
+\begin{proof}
+
+    $x_{n+1}-x_n
+    =\frac{1}{\sqrt{n+1}}-2(\sqrt{n+1}-\sqrt{n})
+    =\frac{2}{2\sqrt{n+1}}-\frac{2}{(\sqrt{n+1}+\sqrt{n})}<0$
+
+    故$\{x_n\}$单调减
+
+    又由$\frac{1}{\sqrt{k}}=\frac{2}{2\sqrt{k}}>\frac{2}{\sqrt{k+1}+\sqrt{k}}=2(\sqrt{k+1}-\sqrt{k})$得,$\sum\limits_{k=1}^{n} \frac{1}{\sqrt{k}}>\sum\limits_{k=1}^{n} 2(\sqrt{k+1}-\sqrt{k})=2(\sqrt{n+1}-1)$
+
+    故$x_n=2(\sqrt{n+1}-\sqrt{n}-1)>-2$,\quad$\{x_n\}$有下界 
+
+    综上,由单调有界原理得,$\lim \limits_{n \to \infty} x_n$存在
+\end{proof}
 
 
 
