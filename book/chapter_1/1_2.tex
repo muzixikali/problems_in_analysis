@@ -5,7 +5,7 @@
 \subsubsection{\texorpdfstring{$\epsilon-N$}方法}
 \vspace{-10pt}
 
-\begin{definition}[数列极限$\epsilon-N$语言]
+\begin{definition}[数列极限$\epsilon-N$语言]\label{数列极限}
     \begin{equation*}
         \forall \epsilon>0,\exists N \in \mathbb{N}^+,\mbox{使得}n>N\mbox{时,有}|x_n-A|<\epsilon\Longleftrightarrow \lim\limits_{n\to \infty} x_n=A
     \end{equation*}
@@ -242,3 +242,154 @@
 \begin{solution}
     $\sum\limits_{k=1}^{n} a_{n,k}=1$
 \end{solution}
+
+\subsubsection{用邻域描述极限}
+\begin{definition}[邻域]
+    区间$(a-\epsilon,a+\epsilon)$称为点$a$的$\epsilon-$领域,用$U(a,\epsilon)$表示。
+
+    区间$(a-\epsilon,a)\bigcup (a,a+\epsilon)$称为$a$的$\epsilon-$去心邻域,用$\overset{\circ}{U}(a,\epsilon)$表示。
+\end{definition}
+
+\begin{note}
+    
+    使用邻域语言,可以将定义\ref{数列极限}中的$\epsilon-\delta$语言表述为以下的等价形式
+
+    \begin{enumerate}
+        \item $\lim \limits_{n \to \infty} a_n = a \Longleftrightarrow \forall \epsilon>0, \exists N\in \mathbb{N}^+,\mbox{使得}\forall n>N\mbox{时},\mbox{有} a_n\in U(a,\epsilon)$
+        \item $\lim \limits_{n \to \infty} a_n = a \Longleftrightarrow \forall \epsilon>0, \mbox{只有有限个}n\in \mathbb{N^+},\mbox{使得}a_n\notin U(a,\epsilon)$
+        \item $\lim \limits_{n \to \infty} a_n = a \Longleftrightarrow \forall \epsilon>0,U(a,\epsilon)$之外仅有$a_n$的有限项
+    \end{enumerate}
+\end{note}
+
+\vspace{3pt}
+\begin{example}
+    设$f:\mathbb{N} \rightarrow \mathbb{N}_1$,$n=f(m)$($\mathbb{N}$和$\mathbb{N}_1$都是全体自然数组成的空间),且$\forall n\in \mathbb{N}:f^{-1}(n)$为有限集.试证明:若$\lim \limits_{n \to \infty} a_n =a$,则$\lim \limits_{m \to \infty} a_{f_{(m)}}=a$
+\end{example}
+
+\begin{proof}
+
+    [法1]$\lim \limits_{n \to \infty} a_n = a \Longleftrightarrow \forall \epsilon>0,U(a,\epsilon)$之外仅有$a_n$的有限项
+
+    把这$U(a,\epsilon)$之外的有限项记作$\{a_{n_j}\}_{j=1}^k={a_{}}=\{a_{n_1},a_{n_2},\cdots,a_{n_k}\}$
+
+    又根据题意得,$f^{-1}(n_j)=\{m|n_j=f_m\}$为有限集,它们的并$E=\underset{j=1}{\overset{k}{\bigcup}} \{m|n_j=f(m)\}$仍然是有限集。
+
+    故$\forall \epsilon>0,U(a,\epsilon)$之外仅有$a_{f_{(m)}}$的有限项:$\{a_{f_{(m)}|m\in E}\} \Longleftrightarrow \lim \limits_{m \to \infty} a_{f_{(m)}}=a$
+
+    [法2]$\lim \limits_{n \to \infty} a_n = a \Longleftrightarrow \forall \epsilon>0, \exists N\in \mathbb{N}^+,\mbox{使得}\forall n>N\mbox{时},\mbox{有} a_n\in U(a,\epsilon)$
+
+    又根据题意得,$\forall n\in \mathbb{N}:f^{-1}(n)$为有限集,则$\underset{n\le N}{\bigcup} f^{-1}(n)$为有限集,$\exists M=\max \underset{n\le N}{\bigcup} f^{-1}(n)$,
+
+    则$m>M$时,有$a_m\in U(a,\epsilon) \Longrightarrow \lim \limits_{m \to \infty} a_{f_{(m)}}=a$
+
+    [法3]只需证明$\{f(m)\}_{m=1}^{\infty}$是$\{n\}_{n=1}^{\infty}$的子列(不需要单调增,只需要趋于$+\infty$即可),则根据数列与子列关系,
+    
+    有$\lim \limits_{n \to \infty} a_n=a \Longrightarrow \lim \limits_{m \to \infty} a_{f_{(m)}}=a$
+
+    事实上,若$\{f(m)\}_{m=1}^{\infty}$是$\{n\}_{n=1}^{\infty}$的子列,则说明$\{f(m)\}_{m=1}^{\infty}$只是$\{n\}_{n=1}^{\infty}$中的有限项,也就是说:$\{n\}_{n=1}^{\infty}$中的有限项对应着$\{f(m)\}_{m=1}^{\infty}$中的无穷多项。
+
+    因此,至少存在一个$n$通过$n=f(m)$对应着无穷多个$m$。这与题设“$\forall n\in \mathbb{N}:f^{-1}(n)$为有限集”矛盾
+\end{proof}
+
+\subsection{用柯西收敛准则证明极限}
+\begin{theorem}[柯西(Cauchy)收敛准则]
+    数列$\{x_n\}$收敛 
+    
+    $\Longleftrightarrow \forall \epsilon>0,\exists N\in \mathbb{N}^+$,使得$\forall m,n>N$,有$|x_m-x_n|<\epsilon$
+
+    $\Longleftrightarrow \forall \epsilon>0,\exists N\in \mathbb{N}^+$,使得$n>N\mbox{时},\forall p\in \mathbb{N}^+$,有$|x_{n+p}-x_n|<\epsilon$
+\end{theorem}
+
+\begin{example}
+    设$\displaystyle x_n=\frac{\sin 1}{2}+\frac{\sin 2}{2^2}+\cdots+\frac{\sin n}{2^n}$,试证$\{x_n\}$收敛
+\end{example}
+
+\begin{proof}
+    $$|x_{n+p}-x_n|
+    =|\frac{\sin (n+1)}{2^{n+1}}+\cdots+\frac{\sin (n+p)}{2^{n+p}}|
+    \le |\frac{\sin (n+1)}{2^{n+1}}|+\cdots+|\frac{\sin (n+p)}{2^{n+p}}|
+    \le \frac{1}{2^{n+1}}+\cdots+\frac{1}{2^{n+p}}$$
+    $$=\frac{1}{2^{n+1}} \cdot \frac{1-\frac{1}{2^p}}{1-\frac{1}{2}}
+    <\frac{1}{2^n}<\frac{1}{n}$$
+
+    解$|x_{n+p}-x_n|<\frac{1}{n}<\epsilon$得$n>\frac{1}{\epsilon}$
+
+    因此,$\forall \epsilon>0,\exists N=[\frac{1}{\epsilon}]+1\in \mathbb{N}^+$,使得$n>N$时,$\forall p\in \mathbb{N}^+$,有$|x_{n+p}-x_n|<\epsilon$
+
+    由柯西收敛准则得,数列$\{x_n\}$收敛 
+\end{proof}
+
+\clearpage
+\begin{example}
+    判断以下命题的真伪:
+
+    数列$\{a_n\}$存在极限$\lim \limits_{n \to \infty} a_n =a$的充分必要条件是:对任意$p\in \mathbb{N}^+$,都有$\lim \limits_{n \to \infty}|a_{n+p}-a_n|=0$
+\end{example}
+
+\begin{solution}
+    
+    该命题不对.如$a_n=\sqrt{n}$,虽然$\lim \limits_{n \to \infty}|a_{n+p}-a_n|
+    =\lim \limits_{n \to \infty}|\sqrt{n+p}-\sqrt{n}|
+    =\lim \limits_{n \to \infty} \frac{p}{\sqrt{n+p}+\sqrt{n}}
+    =0$
+
+    但$\lim \limits_{n \to \infty} a_n =+\infty$,即数列$\{a_n\}$不存在极限
+\end{solution}
+
+\subsection{否定形式及 \texorpdfstring{$\forall$}{} 和 \texorpdfstring{$\exists$}{} 的使用法则}
+
+\begin{theorem}[数列不收敛]
+    数列$\{x_n\}$不收敛
+
+    $\Longleftrightarrow \forall A \in \mathbb{R}, \exists \epsilon_0 > 0,\forall N\in \mathbb{N}^+,\exists n_0 > N$,使得$|x_{n_0}-A|\ge \epsilon_0$ \qquad (极限定义的否定形式)
+    
+    $\Longleftrightarrow \exists \epsilon_0 > 0,\forall N\in \mathbb{N}^+,\exists m_0,n_0 > N$,使得$|x_{m_0}-x_{n_0}|\ge \epsilon_0 $ \qquad (柯西收敛准则的否定形式1)
+
+    $\Longleftrightarrow \exists \epsilon_0 > 0,\forall N\in \mathbb{N}^+,\exists n_0>N,p_0\in \mathbb{N}^+$,使得$|x_{n_0+p_0}-x_{n_0}|\ge \epsilon_0 $\qquad (柯西收敛准则的否定形式2)
+\end{theorem}
+
+\begin{example}
+    证明:$\lim \limits_{n \to \infty} \sin n$不存在
+\end{example}
+
+\begin{proof}
+    
+    [法1]根据极限定义的否定形式,我们需证明:$ \forall A \in \mathbb{R}, \exists \epsilon_0 > 0,\forall N\in \mathbb{N}^+,\exists n_0 > N$,使得$|x_{n_0}-A|\ge \epsilon_0$
+
+    当$|A|>1$时,$\forall n\in \mathbb{N}^+,|\sin n - A| \ge ||\sin n|-|A||=|A|-|\sin n|\ge |A|-1>0$
+
+    当$0\le A \le 1$时,$\forall N\in \mathbb{N}^+,\exists n_0=[(2N\pi - \frac{\pi}{2})+\frac{\pi}{4}]>N$,
+    
+    有$2N\pi - \frac{\pi}{2}-\frac{\pi}{4} < n_0 < 2N\pi -\frac{\pi}{2}+\frac{\pi}{4} \Longrightarrow -1 < \sin n_0 < -\frac{\sqrt{2}}{2}$,
+    则$|\sin n_0 -A|=A-\sin n_0 > A+\frac{\sqrt{2}}{2}\ge \frac{\sqrt{2}}{2}$
+
+    当$-1\le A<0$时,$\forall N\in \mathbb{N}^+,\exists n_0=[(2N\pi + \frac{\pi}{2})+\frac{\pi}{4}]>N$,
+    
+    有$2N\pi + \frac{\pi}{2}-\frac{\pi}{4} < n_0 < 2N\pi +\frac{\pi}{2}+\frac{\pi}{4} \Longrightarrow \frac{\sqrt{2}}{2} < \sin n_0 < 1 $,
+    则$|\sin n_0 -A|=\sin n_0 - A > \frac{\sqrt{2}}{2} - A \ge \frac{\sqrt{2}}{2}$
+
+    [法2]根据柯西收敛准则的否定形式1,我们需证明$\exists \epsilon_0 > 0,\forall N\in \mathbb{N}^+,\exists m_0,n_0 > N$,使得$|x_{m_0}-x_{n_0}|\ge \epsilon_0 $
+
+    事实上,取$\epsilon_0=\frac{\sqrt{2}}{2},m_0=[2N\pi + 2\pi] ,n_0=[2N\pi + \frac{3\pi}{4}]$
+
+    有$m_0,n_0>N$,且$2N\pi + \pi <m_0< 2N\pi + 2\pi,2N\pi +\frac{\pi}{4}<n_0<2N\pi + \frac{3\pi}{4}\Longrightarrow -1<\sin m_0<0,\frac{\sqrt{2}}{2}<\sin n_0<1$,
+    
+    则$|\sin m_0-\sin n_0|=\sin n_0-\sin m_0>\frac{\sqrt{2}}{2}=\epsilon_0$
+
+    [法3]用反证法。假设$\lim \limits_{n \to \infty} \sin n=A$.
+    
+    由$\sin(n+2)-\sin n=\sin(n+1+1)-\sin (n+1-1)=2sin 1 \cos (n+1)$得
+    
+    $\lim \limits_{n \to \infty} \cos (n+1)=\lim \limits_{n \to \infty} [\sin(n+2)-\sin n]=A-A=0$,即$\lim \limits_{n \to \infty} \cos n = 0$
+
+    则$A=\lim \limits_{n \to \infty} \sin n = \lim \limits_{n \to \infty} \sqrt{1-\cos^2 n} = 1$
+
+    又$A=\lim \limits_{n \to \infty} \sin 2n=\lim \limits_{n \to \infty} 2\cos n \sin n = 0$
+
+    所以产生矛盾。$\lim \limits_{n \to \infty} \sin n$不存在
+\end{proof}
+
+
+
+
+
