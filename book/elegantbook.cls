@@ -1113,8 +1113,9 @@
 \renewcommand{\theexam}{\thesection.\arabic{exam}}
 \newenvironment{example}[1][]{
   \refstepcounter{exam}
+  
   \par\noindent\textbf{\color{main}{\examplename} \theexam #1 }\rmfamily}{
-  \par\ignorespacesafterend}
+  \par\ignorespacesafterend \vspace{1pt}}
 
 %% Exercise with counter
 \newcounter{exer}[section]
@@ -1125,7 +1126,7 @@
   \par\noindent\makebox[-3pt][r]{
     \scriptsize\color{red!90}\HandPencilLeft\quad}
     \textbf{\color{third}{\exercisename} \theexer #1 }\rmfamily}{
-    \par\ignorespacesafterend}
+    \par\ignorespacesafterend \vspace{1pt}}
 
 \newcounter{practice}[section]
 \setcounter{practice}{0}
@@ -1135,7 +1136,7 @@
   \par\noindent\makebox[-3pt][r]{
     \scriptsize\color{red!90}\HandPencilLeft\quad}
     \textbf{\color{third}{\practicename} \thepractice #1 }\rmfamily}{
-    \par\ignorespacesafterend}
+    \par\ignorespacesafterend \vspace{1pt}}
 
 %% Problem with counter
 \newcounter{prob}[section]
@@ -1149,12 +1150,12 @@
 \newenvironment{note}{
   \par\noindent\makebox[-3pt][r]{
     \scriptsize\color{red!90}\textdbend\quad}
-    \textbf{\color{second}\notename} \citshape}{\par}
+    \textbf{\color{second}\notename} \citshape}{\par \vspace{6pt}}
 
 \newenvironment{proof}{
   \par\noindent\textbf{\color{second}\proofname\;}
-  \color{black!90}\cfs }{\par}
-\newenvironment{solution}{\par\noindent\textbf{\color{main}\solutionname } \citshape}{\par}
+  \color{black!90}\cfs }{\par \vspace{2pt}}
+\newenvironment{solution}{\par\noindent\textbf{\color{main}\solutionname } \citshape}{\par \par \vspace{2pt}}
 \newenvironment{remark}{\noindent\textbf{\color{second}\remarkname} }{\par}
 \newenvironment{assumption}{\par\noindent\textbf{\color{third}\assumptionname } \citshape}{\par}
 \newenvironment{conclusion}{\par\noindent\textbf{\color{third}\conclusionname } \citshape}{\par}
