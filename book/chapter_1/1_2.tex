@@ -144,7 +144,7 @@
 \subsubsection{拟合法}
 
 \begin{note}
-    为了证明$\lim \limits_{n \to \infty}x_n=A$,关键在于证明$|x_n-A|$能够任意小. 为此,一般尽可能将$x_n$化简.值得注意的是,有时候$x_n$难以化简,反而$A$能够“化繁”,写成与$x_n$类似的形式.这种方法称为“拟合法”.“拟合法”思想的实质,是将单位“1”进行适当的分解.
+    为了证明$\lim \limits_{n \to \infty}x_n=A$,关键在于证明$|x_n-A|$能够任意小. 为此,一般尽可能将$x_n$化简.值得注意的是,有时候$x_n$难以化简,反而$A$能够“化繁”,写成与$x_n$类似的形式.这种方法称为“拟合法”.“拟合法”思想的实质, 是将单位“1”进行适当的分解.
 \end{note}
 
 \vspace{8pt}
@@ -251,7 +251,7 @@
 \end{definition}
 
 \begin{note}
-    
+
     使用邻域语言,可以将定义\ref{数列极限}中的$\epsilon-\delta$语言表述为以下的等价形式
 
     \begin{enumerate}
@@ -283,7 +283,7 @@
     则$m>M$时,有$a_m\in U(a,\epsilon) \Longrightarrow \lim \limits_{m \to \infty} a_{f_{(m)}}=a$
 
     [法3]只需证明$\{f(m)\}_{m=1}^{\infty}$是$\{n\}_{n=1}^{\infty}$的子列(不需要单调增,只需要趋于$+\infty$即可),则根据数列与子列关系,
-    
+
     有$\lim \limits_{n \to \infty} a_n=a \Longrightarrow \lim \limits_{m \to \infty} a_{f_{(m)}}=a$
 
     事实上,若$\{f(m)\}_{m=1}^{\infty}$是$\{n\}_{n=1}^{\infty}$的子列,则说明$\{f(m)\}_{m=1}^{\infty}$只是$\{n\}_{n=1}^{\infty}$中的有限项,也就是说:$\{n\}_{n=1}^{\infty}$中的有限项对应着$\{f(m)\}_{m=1}^{\infty}$中的无穷多项。
@@ -293,8 +293,8 @@
 
 \subsection{用柯西收敛准则证明极限}
 \begin{theorem}[柯西(Cauchy)收敛准则]
-    数列$\{x_n\}$收敛 
-    
+    数列$\{x_n\}$收敛
+
     $\Longleftrightarrow \forall \epsilon>0,\exists N\in \mathbb{N}^+$,使得$\forall m,n>N$,有$|x_m-x_n|<\epsilon$
 
     $\Longleftrightarrow \forall \epsilon>0,\exists N\in \mathbb{N}^+$,使得$n>N\mbox{时},\forall p\in \mathbb{N}^+$,有$|x_{n+p}-x_n|<\epsilon$
@@ -306,17 +306,17 @@
 
 \begin{proof}
     $$|x_{n+p}-x_n|
-    =|\frac{\sin (n+1)}{2^{n+1}}+\cdots+\frac{\sin (n+p)}{2^{n+p}}|
-    \le |\frac{\sin (n+1)}{2^{n+1}}|+\cdots+|\frac{\sin (n+p)}{2^{n+p}}|
-    \le \frac{1}{2^{n+1}}+\cdots+\frac{1}{2^{n+p}}$$
+        =|\frac{\sin (n+1)}{2^{n+1}}+\cdots+\frac{\sin (n+p)}{2^{n+p}}|
+        \le |\frac{\sin (n+1)}{2^{n+1}}|+\cdots+|\frac{\sin (n+p)}{2^{n+p}}|
+        \le \frac{1}{2^{n+1}}+\cdots+\frac{1}{2^{n+p}}$$
     $$=\frac{1}{2^{n+1}} \cdot \frac{1-\frac{1}{2^p}}{1-\frac{1}{2}}
-    <\frac{1}{2^n}<\frac{1}{n}$$
+        <\frac{1}{2^n}<\frac{1}{n}$$
 
     解$|x_{n+p}-x_n|<\frac{1}{n}<\epsilon$得$n>\frac{1}{\epsilon}$
 
     因此,$\forall \epsilon>0,\exists N=[\frac{1}{\epsilon}]+1\in \mathbb{N}^+$,使得$n>N$时,$\forall p\in \mathbb{N}^+$,有$|x_{n+p}-x_n|<\epsilon$
 
-    由柯西收敛准则得,数列$\{x_n\}$收敛 
+    由柯西收敛准则得,数列$\{x_n\}$收敛
 \end{proof}
 
 \clearpage
@@ -327,11 +327,11 @@
 \end{example}
 
 \begin{solution}
-    
+
     该命题不对.如$a_n=\sqrt{n}$,虽然$\lim \limits_{n \to \infty}|a_{n+p}-a_n|
-    =\lim \limits_{n \to \infty}|\sqrt{n+p}-\sqrt{n}|
-    =\lim \limits_{n \to \infty} \frac{p}{\sqrt{n+p}+\sqrt{n}}
-    =0$
+        =\lim \limits_{n \to \infty}|\sqrt{n+p}-\sqrt{n}|
+        =\lim \limits_{n \to \infty} \frac{p}{\sqrt{n+p}+\sqrt{n}}
+        =0$
 
     但$\lim \limits_{n \to \infty} a_n =+\infty$,即数列$\{a_n\}$不存在极限
 \end{solution}
@@ -342,7 +342,7 @@
     数列$\{x_n\}$发散
 
     $\Longleftrightarrow \forall A \in \mathbb{R}, \exists \epsilon_0 > 0,\forall N\in \mathbb{N}^+,\exists n_0 > N$,使得$|x_{n_0}-A|\ge \epsilon_0$ \qquad (极限定义的否定形式)
-    
+
     $\Longleftrightarrow \exists \epsilon_0 > 0,\forall N\in \mathbb{N}^+,\exists m_0,n_0 > N$,使得$|x_{m_0}-x_{n_0}|\ge \epsilon_0 $ \qquad (柯西收敛准则的否定形式1)
 
     $\Longleftrightarrow \exists \epsilon_0 > 0,\forall N\in \mathbb{N}^+,\exists n_0>N,p_0\in \mathbb{N}^+$,使得$|x_{n_0+p_0}-x_{n_0}|\ge \epsilon_0 $\qquad (柯西收敛准则的否定形式2)
@@ -360,18 +360,18 @@
 \end{example}
 
 \begin{proof}
-    
+
     [法1]根据极限定义的否定形式,我们需证明:$ \forall A \in \mathbb{R}, \exists \epsilon_0 > 0,\forall N\in \mathbb{N}^+,\exists n_0 > N$,使得$|x_{n_0}-A|\ge \epsilon_0$
 
     当$|A|>1$时,$\forall n\in \mathbb{N}^+,|\sin n - A| \ge ||\sin n|-|A||=|A|-|\sin n|\ge |A|-1>0$
 
     当$0\le A \le 1$时,$\forall N\in \mathbb{N}^+,\exists n_0=[(2N\pi - \frac{\pi}{2})+\frac{\pi}{4}]>N$,
-    
+
     有$2N\pi - \frac{\pi}{2}-\frac{\pi}{4} < n_0 < 2N\pi -\frac{\pi}{2}+\frac{\pi}{4} \Longrightarrow -1 < \sin n_0 < -\frac{\sqrt{2}}{2}$,
     则$|\sin n_0 -A|=A-\sin n_0 > A+\frac{\sqrt{2}}{2}\ge \frac{\sqrt{2}}{2}$
 
     当$-1\le A<0$时,$\forall N\in \mathbb{N}^+,\exists n_0=[(2N\pi + \frac{\pi}{2})+\frac{\pi}{4}]>N$,
-    
+
     有$2N\pi + \frac{\pi}{2}-\frac{\pi}{4} < n_0 < 2N\pi +\frac{\pi}{2}+\frac{\pi}{4} \Longrightarrow \frac{\sqrt{2}}{2} < \sin n_0 < 1 $,
     则$|\sin n_0 -A|=\sin n_0 - A > \frac{\sqrt{2}}{2} - A \ge \frac{\sqrt{2}}{2}$
 
@@ -380,13 +380,13 @@
     事实上,取$\epsilon_0=\frac{\sqrt{2}}{2},m_0=[2N\pi + 2\pi] ,n_0=[2N\pi + \frac{3\pi}{4}]$
 
     有$m_0,n_0>N$,且$2N\pi + \pi <m_0< 2N\pi + 2\pi,2N\pi +\frac{\pi}{4}<n_0<2N\pi + \frac{3\pi}{4}\Longrightarrow -1<\sin m_0<0,\frac{\sqrt{2}}{2}<\sin n_0<1$,
-    
+
     则$|\sin m_0-\sin n_0|=\sin n_0-\sin m_0>\frac{\sqrt{2}}{2}=\epsilon_0$
 
     [法3]用反证法。假设$\lim \limits_{n \to \infty} \sin n=A$.
-    
+
     由$\sin(n+2)-\sin n=\sin(n+1+1)-\sin (n+1-1)=2sin 1 \cos (n+1)$得
-    
+
     $\lim \limits_{n \to \infty} \cos (n+1)=\lim \limits_{n \to \infty} [\sin(n+2)-\sin n]=A-A=0$,即$\lim \limits_{n \to \infty} \cos n = 0$
 
     则$A=\lim \limits_{n \to \infty} \sin n = \lim \limits_{n \to \infty} \sqrt{1-\cos^2 n} = 1$
@@ -403,11 +403,11 @@
 \end{example}
 
 \begin{proof}
-    
+
     $\forall n\in \mathbb{N}^+,|S_{n+p}-S_n|=\frac{1}{n+1}+\cdots+\frac{1}{n+p}\ge \frac{p}{n+p} \to 1 \ne 0(p \to \infty)$
 
     故可取$\epsilon_0=\frac{1}{2}$,则由极限的保号性得$\forall N\in \mathbb{N}^+,\forall n>N,\exists p\in \mathbb{N}^+,$使得$|S_{n+p_0}-S_{n}|\ge \frac{p}{n+p}\ge \frac{1}{2}=\epsilon_0$
-    
+
     故数列$\{S_n\}$发散
 \end{proof}
 
@@ -445,15 +445,15 @@
     由定理\ref{定理1.1.4}处的笔记可得$\frac{1}{n+1}<\ln(1+\frac{1}{n})<\frac{1}{n}$
 
     $x_{n+1}-x_n=\frac{1}{n+1}-\ln (n+1)+\ln n
-    =\frac{1}{n+1}-\ln \frac{n+1}{n}
-    =\frac{1}{n+1}-\ln (1+\frac{1}{n})<0$
+        =\frac{1}{n+1}-\ln \frac{n+1}{n}
+        =\frac{1}{n+1}-\ln (1+\frac{1}{n})<0$
 
-    故$\{x_n\}$单调减 
+    故$\{x_n\}$单调减
 
     又$x_n=\sum\limits_{k=1}^{n} \frac{1}{k}-\ln n
-    =\sum\limits_{k=1}^{n} \frac{1}{k}-\ln  (\frac{n}{n-1} \cdot \frac{n-1}{n-2} \cdots \frac{3}{2} \cdot \frac{2}{1})
-    =\sum\limits_{k=1}^{n} \frac{1}{k}-\sum\limits_{k=1}^{n-1}\ln (1+\frac{1}{k})
-    =\sum\limits_{k=1}^{n} [\frac{1}{k}-\ln (1+\frac{1}{k})]+\frac{1}{n}>\frac{1}{n}>0$
+        =\sum\limits_{k=1}^{n} \frac{1}{k}-\ln  (\frac{n}{n-1} \cdot \frac{n-1}{n-2} \cdots \frac{3}{2} \cdot \frac{2}{1})
+        =\sum\limits_{k=1}^{n} \frac{1}{k}-\sum\limits_{k=1}^{n-1}\ln (1+\frac{1}{k})
+        =\sum\limits_{k=1}^{n} [\frac{1}{k}-\ln (1+\frac{1}{k})]+\frac{1}{n}>\frac{1}{n}>0$
 
     故$\{x_n\}$有下界0
 
@@ -467,17 +467,279 @@
 \begin{proof}
 
     $x_{n+1}-x_n
-    =\frac{1}{\sqrt{n+1}}-2(\sqrt{n+1}-\sqrt{n})
-    =\frac{2}{2\sqrt{n+1}}-\frac{2}{(\sqrt{n+1}+\sqrt{n})}<0$
+        =\frac{1}{\sqrt{n+1}}-2(\sqrt{n+1}-\sqrt{n})
+        =\frac{2}{2\sqrt{n+1}}-\frac{2}{(\sqrt{n+1}+\sqrt{n})}<0$
 
     故$\{x_n\}$单调减
 
     又由$\frac{1}{\sqrt{k}}=\frac{2}{2\sqrt{k}}>\frac{2}{\sqrt{k+1}+\sqrt{k}}=2(\sqrt{k+1}-\sqrt{k})$得,$\sum\limits_{k=1}^{n} \frac{1}{\sqrt{k}}>\sum\limits_{k=1}^{n} 2(\sqrt{k+1}-\sqrt{k})=2(\sqrt{n+1}-1)$
 
-    故$x_n=2(\sqrt{n+1}-\sqrt{n}-1)>-2$,\quad$\{x_n\}$有下界 
+    故$x_n=2(\sqrt{n+1}-\sqrt{n}-1)>-2$,\quad$\{x_n\}$有下界
 
     综上,由单调有界原理得,$\lim \limits_{n \to \infty} x_n$存在
 \end{proof}
 
+\subsection{数列与子列,函数与数列的极限关系}
+
+\begin{theorem}[数列与子列]\label{定理1.2.4}
+    $\lim \limits_{n \to \infty} x_n=A \Longleftrightarrow \mbox{对于}\{x_n\}\mbox{的任意子列}\{x_{n_k}\},\mbox{有}\lim \limits_{k \to \infty} x_{n_k}=A$
+\end{theorem}
+
+\begin{theorem}[海涅定理]
+    $\lim \limits_{x \to x_0} f(x)=a \Longleftrightarrow \mbox{任意的}\{x_n\}$若满足$x_n\ne x_0(n=1,2,\cdots),\mbox{且}\lim \limits_{n \to \infty} x_n=x_0,\mbox{则有}\lim \limits_{n \to \infty} f(x_n)=a$
+\end{theorem}
+
+\begin{example}
+    试证:$\lim \limits_{n \to \infty} x_n=A \Longleftrightarrow \lim \limits_{n \to \infty} x_{2n}=A,\lim \limits_{n \to \infty} x_{2n+1}=A$
+\end{example}
+
+\begin{proof}
+
+    [必要性]由定理\ref{定理1.2.4}可得
+
+    [充分性]
+
+    $\lim \limits_{n \to \infty} x_{2n}=A \Longrightarrow \forall \epsilon>0,\exists N_1\in \mathbb{N}^+,\mbox{使得}n>N_1\mbox{时},\mbox{有}|x_{2n}-A|<\epsilon$
+
+    $\lim \limits_{n \to \infty} x_{2n+1}=A \Longrightarrow \forall \epsilon>0,\exists N_2\in \mathbb{N}^+,\mbox{使得}\forall n>N_2\mbox{时},\mbox{有}|x_{2n+1}-A|<\epsilon$
+
+    故$\forall \epsilon>0,\exists N=\max\{2N_1,2N_2+1\}\in \mathbb{N}^+,\mbox{使得}\forall n>N\mbox{时},\mbox{有}|x_n-A|<\epsilon$,即$\lim \limits_{n \to \infty} x_n=A$
+\end{proof}
+
+\begin{example}
+    设函数$f(x)$的在点$x_0$的去心邻域$I$内有定义.试证:如果对于任意的点列$\{x_n\}$,这里$x_n\in I,\lim \limits_{n \to \infty} x_n = x_0,0<|x_{n+1}-x_0|<|x_n-x_0|$,都有$\lim \limits_{n \to \infty} f(x_n)=a$,那么$\lim \limits_{x \to x_0} f(x)=a$
+\end{example}
+
+\begin{proof}
+
+    用反证法。假设$\lim \limits_{x \to x_0} f(x)\ne a$,则$\exists \epsilon_0>0$,使得$\forall \delta>0,\exists x_{\delta}\in I$,虽然$0<|x_{\delta}-x_0|<\delta$,但$|f(x_{\delta})-a|\ge \epsilon_0$
+
+    令$\delta_1=1$,则$\exists x_1\in I$,$0<|x_1-x_0|<\delta_1 $且有$|f(x_1)-a|\ge \epsilon_0$
+
+    令$\delta_2=\min \{\frac{1}{2},|x_1-x_0|\}$,则$\exists x_2\in I$,$0<|x_2-x_0|<\delta_2 $且有$|f(x_2)-a|\ge \epsilon_0$
+
+    $\cdots$
+
+    令$\delta_n=\min \{\frac{1}{n},|x_{n-1}-x_0|\}$,则$\exists x_n\in I$,$0<|x_n-x_0|<\delta_n $且有$|f(x_n)-a|\ge \epsilon_0$
+
+    以上步骤确定了数列$\{x_n\}$,它满足$x_n\in I,\lim \limits_{n \to \infty} x_n = x_0,0<|x_{n+1}-x_0|<|x_n-x_0|$
+
+    但$\forall n\in \mathbb{N}^+,|f(x_n)-a|\ge \epsilon$,即$\lim \limits_{n \to \infty} f(x_n) \ne a$.与题设矛盾
+\end{proof}
+
+\begin{example}
+    证明:从任意数列$\{x_n\}$中,一定可以选出一个单调的子列。
+\end{example}
+
+\begin{proof}
+
+    假设从数列$\{x_n\}$中,可以选出一个单调增的子列,则问题已得证.
+
+    下证从数列$\{x_n\}$中,如果不可以选出一个单调增的子列,则一定能选出一个单调减的子列:
+
+    假设数列$\{x_n\}$中不存在单调增的子列,则
+
+    $\exists n_1 \in \mathbb{N}^+$,使得$n>n_1$时,恒有$x_n<x_{n_1}$. 同样地,$\{x_n\}_{n>n_1}$中也无单调增的子列,故
+
+    $\exists n_2>n_1 \in \mathbb{N}^+$,使得$n>n_2$,恒有$x_n<x_{n_2}<x_{n_1}$
+
+    重复上述操作,可得到$\{x_n\}$的一个子列$\{x_{n_k}\}$,满足$\cdots <x_n<x_{n-1}\cdots<x_2<x_1$,即$\{x_{n_k}\}$单调减
+
+    综上,从任意数列$\{x_n\}$中,一定可以选出一个单调的子列。
+\end{proof}
+
+\vspace{-12pt}
+\subsection{极限的运算性质}
+
+\begin{theorem}[极限的四则运算]
+    若$\lim \limits_{n \to \infty} x_n$存在,$\lim \limits_{n \to \infty} y_n$也存在,
+    则$\lim \limits_{n \to \infty} x_n \circledast  y_n$也存在,且$\lim \limits_{n \to \infty} x_n \circledast  y_n = \lim \limits_{n \to \infty} x_n \circledast \lim \limits_{n \to \infty} y_n$
+
+    \vspace{2pt}
+    其中,$\circledast \in \{+,-,\times,\div \}$(除法要求分母不为0)
+\end{theorem}
+
+\begin{note}
+    \begin{itemize}
+        \item 指数运算亦成立(要求底数数列大于0)
+        \item 以上性质可以推广到任意有限多个数列的情况
+        \item 对于无穷多个数列,结论不一定成立
+    \end{itemize}
+\end{note}
+
+\begin{example}
+    举例说明无穷多个无穷小量相乘,可以不是无穷小量.
+\end{example}
+
+\begin{solution}
+
+    如以下数列都是无穷小量:
+    $$\{1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\frac{1}{5},\frac{1}{6},\cdots,\frac{1}{n},\cdots\}$$
+    $$\{1,2,\frac{1}{3},\frac{1}{4},\frac{1}{5},\frac{1}{6},\cdots,\frac{1}{n},\cdots\}$$
+    $$\{1,1,3^2,\frac{1}{4},\frac{1}{5},\frac{1}{6},\cdots,\frac{1}{n},\cdots\}$$
+    $$\{1,1,1,4^3,\frac{1}{5},\frac{1}{6},\cdots,\frac{1}{n},\cdots\}$$
+    $$\cdots \cdots$$
+
+    但取其对应项相乘,组成数列$\{1,1,1,1,1,1,\cdots,1\cdots\}$,其极限为1,不是无穷小量
+\end{solution}
+
+\subsection{练习}
+
+\begin{exercise}
+
+    (1)已知$\lim \limits_{n \to \infty} x_n = a$,求证$\lim \limits_{n \to \infty} \sqrt[3]{x_n}=\sqrt[3]{a} $
+
+    (2)用$\epsilon-\delta$语言证明$\lim \limits_{x \to 1} \frac{1}{x}=1$
+\end{exercise}
+
+\begin{proof}
+    (1)
+    若$a\ne 0$,则$$|\sqrt[3]{x_n}-\sqrt[3]{a}|
+        =\frac{|x_n-a|}{(\sqrt[3]{x_n})^2+\sqrt[3]{x_n}\sqrt[3]{a}+(\sqrt[3]{a})^2}
+        =\frac{|x_n-a|}{(\sqrt[3]{x_n}+\frac{1}{2}\sqrt[3]{a})^2+\frac{3}{4}(\sqrt[3]{a})^2}
+        \le \frac{4|x_n-a|}{3(\sqrt[3]{a})^2}$$
+
+    又$\lim \limits_{n \to \infty} x_n=a \Longrightarrow \forall
+        \epsilon>0,\exists N \in \mathbb{N}^+,\mbox{使得}n>N\mbox{时,有}|x_n-a|<\frac{3(\sqrt[3]{a})^2}{4}\epsilon$,此时$|\sqrt[3]{x_n}-\sqrt[3]{a}|<\epsilon$
+
+    若$a=0$,则$\lim \limits_{n \to \infty} x_n=0 \Longrightarrow \forall
+        \epsilon>0,\exists N \in \mathbb{N}^+,\mbox{使得}n>N\mbox{时,有}|x_n|<\sqrt[3]{\epsilon}$,此时$|\sqrt[3]{x_n}|<\epsilon$
+
+    综上, $\lim \limits_{n \to \infty} \sqrt[3]{x_n}=\sqrt[3]{a} $
+
+    (2)限定$|x-1|<\frac{1}{2} \Longrightarrow \frac{1}{2}<x<\frac{3}{2} \Longrightarrow |x|>\frac{1}{2}$,则
+    $$|\frac{1}{x}-1|=\frac{|x-1|}{|x|}<2|x-1|$$
+
+    故$\forall \epsilon>0,\exists \delta=\min\{1,\frac{1}{2}\epsilon\},\mbox{使得}0<|x-1|<\delta\mbox{时,有}|\frac{1}{x}-1|<\epsilon$,即$\lim \limits_{x \to 1} \frac{1}{x}=1$
+\end{proof}
+
+\begin{exercise}
+    用$\epsilon-N$方法证明:
+
+    (1)$\lim \limits_{n \to \infty} \sqrt[n]{n}=1
+        \quad (2)\lim \limits_{n \to \infty} n^3q^n=0(|q|<1)
+        \quad(3) \lim \limits_{n \to \infty} \frac{\ln n}{n^2}=0$
+\end{exercise}
+
+\begin{proof}
+
+    (1)参考\cref{例题1.2.1}. 欲解$|\sqrt[n]{n}-1|=\sqrt[n]{n}-1<\epsilon$,很难,考虑放大法.
+
+    设$b_n=\sqrt[n]{n}-1$,则$n=(b_n+1)^n=1+C_n^1b_n+C_n^2b_n^2+\cdots $
+
+    又$b_n>0$,故$n>C_n^2b_n=\frac{n(n-1)}{2}b_n^2$,即$b_n< \sqrt{\frac{2}{n-1}}$,
+
+    解$\sqrt{\frac{2}{n-1}}\le\epsilon$得$n>\frac{2}{\epsilon^2}+1$
+    \begin{equation*}
+        \forall \epsilon>0,\exists N=[\frac{2}{\epsilon^2}]+1 \in \mathbb{N}^+,\mbox{使得}n>N\mbox{时,有}|\sqrt[n]{n}-1|<\sqrt{\frac{2}{n-1}}<\epsilon\Longleftrightarrow \lim\limits_{n\to \infty}\sqrt[n]{n}=1
+    \end{equation*}
+
+    (2)当$q=0$时,易得.
+
+    当$0<|q|<1$时,可设$|q|=\frac{1}{1+\alpha}$,其中$\alpha>0$,假定$n>6 \Longrightarrow 24n^2-96(n-3)^2=24(3n-6)(n-6)$,则
+    $$|n^3q^n|=|\frac{n^3}{(1+\alpha)^n}|=|\frac{n^3}{1+C_n^1\alpha+C_n^2\alpha^2+C_n^3\alpha^3+C_n^4\alpha^4+\cdots}|<|\frac{n^3}{\frac{n(n-1)(n-2)(n-3)}{1\times2\times3\times4}\alpha^4}|$$
+    $$=|\frac{24n^2}{(n-1)(n-2)(n-3)\alpha^4}|$$
+
+    因为$\lim \limits_{n \to \infty} \frac{24n^2}{(n-1)(n-2)(n-3)\alpha^4} = 0\Longrightarrow \forall \epsilon,\mbox{存在}N\in \mathbb{N}^+,\mbox{使得}n>N\mbox{时},\mbox{有} |\frac{24n^2}{(n-1)(n-2)(n-3)\alpha^4}|<\epsilon,\mbox{则此时}|n^3q^n|<\epsilon $
+
+    即$\lim \limits_{n \to \infty} n^3q^n=0$
+
+    (3)$$|\frac{\ln n}{n^2}|=\frac{\ln n}{n^2}<\frac{n-1}{n^2}\le \frac{1}{n} \quad \mbox{利用定理\ref{定理1.1.4}处的对数不等式}$$
+
+    故$\forall \epsilon>0,\exists N=[\frac{1}{\epsilon}]+1 \in \mathbb{N}^+,\mbox{使得}n>N\mbox{时,有}|\frac{\ln n}{n^2}|<\frac{1}{n}<\epsilon\Longleftrightarrow \lim \limits_{n \to \infty} \frac{\ln n}{n^2}=0$
+\end{proof}
+
+\begin{exercise}
+    设$\lim \limits_{n \to \infty} a_n = a$,试用$\epsilon-N$方法证明:若$x_n=\frac{a_1+2a_2+\cdots+na_n}{1+2+\cdots+n}$,则$\lim \limits_{n \to \infty} x_n = a$
+\end{exercise}
+
+\begin{proof}
+    $|x_n-a|=|\frac{(a_1-a)+2(a_2-a)+\cdots+n(a_n-a)}{1+2+\cdots+n}|$
+
+    $\lim \limits_{n \to \infty} a_n=a \Longrightarrow \forall \epsilon>0,\exists N_1\in \mathbb{N}^+,\mbox{使得}n>N_1\mbox{时},|a_n-a|<\frac{\epsilon}{2}$
+
+    又$\exists M= \underset{n\le N_1}{\min} |a_n-a| ,\mbox{使得}n\le N_1\mbox{时},|a_n-a|\le M$
+
+    则$|x_n-a|<\frac{M+2M+\cdots+N_1M+[(N_1+1)+\cdots+n]\frac{\epsilon}{2}}{1+2+\cdots+n}
+        <\frac{\frac{(1+N_1)N_1}{2}M}{\frac{(1+n)n}{2}}+\frac{\epsilon}{2}
+        =\frac{(N_1+1)MN_1}{n(n+1)}+\frac{\epsilon}{2}$
+
+    又$\lim \limits_{n \to \infty} \frac{(N_1+1)MN_1}{n(n+1)}=0$,故$\exists N_2 \in \mathbb{N}^+,\mbox{使得}n>N_2\mbox{时},\frac{(N_1+1)MN_1}{n(n+1)}<\frac{\epsilon}{2}$
+
+    综上,$\forall \epsilon>0,\exists N=\max \{ N_1,N_2\}\in \mathbb{N}^+,\mbox{使得}n>N\mbox{时},|a_n-a|<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon$
+\end{proof}
+
+\clearpage
+
+\begin{exercise}
+    设$x_n=\sum\limits_{k=2}^{n} \frac{\cos k}{k(k-1)}$,试证$\{x_n\}$收敛.
+\end{exercise}
+
+\begin{proof}
+
+    $|x_{n+p}-x_n|=\sum\limits_{k=n+1}^{n+p} \frac{\cos k}{k(k-1)}
+    <\sum\limits_{k=n+1}^{n+p} \frac{1}{k(k-1)}
+    =\sum\limits_{k=n+1}^{n+p} (\frac{1}{k-1}-\frac{1}{k})=\frac{1}{n}-\frac{1}{n+p}
+    <\frac{1}{n}$
+
+    故$\forall \epsilon>0,\exists N=[\frac{1}{\epsilon}]+1\in \mathbb{N}^+$,使得$n>N\mbox{时},\forall p\in \mathbb{N}^+$,有$|x_{n+p}-x_n|<\frac{1}{n}<\epsilon$
+
+    由柯西收敛准则得,$\{x_n\}$收敛
+\end{proof}
+
+\begin{exercise}
+    $\{a_n\}$是一个数列,试证明:若$\lim \limits_{n \to \infty} \frac{a_1+a_2+\cdots+a_n}{n}=a(\mbox{有限数})$,则$\lim \limits_{n \to \infty} \frac{a_n}{n}=0$
+\end{exercise}
+
+\begin{proof}
+    $$\frac{a_n}{n}=\frac{a_1+a_2+\cdots+a_n}{n}-\frac{a_1+a_2+\cdots+a_{n-1}}{n}
+    =\frac{a_1+a_2+\cdots+a_n}{n}-\frac{a_1+a_2+\cdots+a_{n-1}}{n-1}\cdot \frac{n-1}{n}$$
+
+    由极限的四则运算法则得$\lim \limits_{n \to \infty} \frac{a_n}{n}=a-a\cdot 1=0$
+\end{proof}
+
+\begin{exercise}
+    设$a_n>0(n=1,2\cdots)$且$\exists C>0,m<n$时有$a_n\le Ca_m$.已知$\{a_n\}$中存在子列$\{a_{n_k}\}$使得$\lim \limits_{k \to \infty} a_{n_k}=0$,试证明$\lim \limits_{n \to \infty} a_n = 0$
+\end{exercise}
+
+\begin{proof}
+    
+    $\lim \limits_{k \to \infty} a_{n_k}=0 \Longrightarrow \forall \epsilon>0,\exists N_1 \in \mathbb{N}^+,\mbox{使得}k\ge N_1\mbox{时,有}|x_{n_k}|<\frac{\epsilon}{C}$
+
+    取$N=n_{N_1}$,$\mbox{则}n>N\mbox{时,有}|x_n|\le C|x_{N}|=C|x_{n_{N_1}}|<C\cdot \frac{\epsilon}{C} =\epsilon$,故$\lim \limits_{n \to \infty} a_n = 0$
+\end{proof}
+
+\begin{exercise}
+    设$x_n=1+\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{3}}+\cdots+\frac{1}{\sqrt{n}}$,求证$\{x_n\}$发散
+\end{exercise}
+
+\begin{proof}
+    
+    设$m>n$,则$|x_m-x_n|=|\frac{1}{\sqrt{n+1}}+\frac{1}{\sqrt{n+2}}+\cdots+\frac{1}{\sqrt{m}}|>\frac{m-n}{\sqrt{m}}$
+
+    故$\exists \epsilon_0 =1,\forall N\in \mathbb{N}^+,\exists m=2n,n >N$,使得$|x_{m}-x_{n}|>\frac{2n-n}{\sqrt{2n}} = \sqrt{\frac{n}{2}}\ge \epsilon_0 \quad (n>N\Longrightarrow n\ge 2)$
+
+    由柯西收敛准则的否定形式得,$\{x_n\}$发散
+\end{proof}
+
+\begin{exercise}
+    判断题:设$\{a_n\}$是一个数列,若在任一子列$\{a_{n_k}\}$中均存在收敛子列$\{a_{n_{k_r}}\}$,则$a_n$必为收敛子列
+\end{exercise}
+
+\begin{solution}
+    
+    不对。任一子列$\{a_{n_k}\}$中均存在收敛子列$\{a_{n_{k_r}}\}$不一定说明任一子列$\{a_{n_k}\}$收敛。
+
+    如$\{0,1,0,1\cdots\}$
+\end{solution}
 
 
+\begin{exercise}
+    设$\{a_n\}$为单调数列,$\{a_{n_k}\} \subset \{a_n\}$为其一个子列,若$\lim \limits_{k \to \infty} a_{n_k}=a$,试证$\lim \limits_{n \to \infty} a_n=a$
+\end{exercise}
+
+\begin{proof}
+    $\lim \limits_{k \to \infty} a_{n_k}=a \Longrightarrow \forall \epsilon>0,\exists k_0 \in \mathbb{N}^+,\mbox{使得}k\ge k_0\mbox{时,有}a-\epsilon<x_{n_k}<a+\epsilon$
+
+    取$N=n_{k_0}$,则$\forall n>N$,总可以找到一个$n_k>n\ge n_{k_0}$,使得$a-\epsilon<x_{n_{k_0}}<x_n<x_{n_k}<a+\epsilon$(由单调性得),即$|x_n-a|<\epsilon$成立.故$\lim \limits_{n \to \infty} a_n=a$
+\end{proof}
